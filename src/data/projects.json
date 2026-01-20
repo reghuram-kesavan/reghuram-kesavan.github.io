@@ -1,0 +1,197 @@
+[
+    {
+        "id": "fan-blade-modelling",
+        "title": "Parametric Fan Blade Modelling & Body-Force Methods",
+        "role": "ISAE-Supaero Research Project",
+        "tags": [
+            "Aerodynamics",
+            "CFD",
+            "Research",
+            "Automation"
+        ],
+        "tools": [
+            "Python",
+            "B-splines",
+            "Automated Workflows"
+        ],
+        "impact": "Developed a semi-analytical Body-Force Method for aerodynamic simulations, automating the geometry-to-model workflow using B-splines.",
+        "summary": "Focuses on parametric modeling of fan blades and the implementation of body-force terms for efficient aerodynamic analysis, significantly reducing computational overhead compared to full-scale RANS.",
+        "problem": "Full-scale RANS simulations for fan stages are computationally expensive and slow for parametric design studies.",
+        "approach": "Replace explicit blade geometry with source terms (Body-Force Model) based on parametric blade profiles.",
+        "methods": "Python-based geometry generation using B-splines; semi-analytical force calculation; automated mesh/model generation.",
+        "validation": "Comparison with detailed RANS data to ensure force distribution accuracy.",
+        "results": "Created a robust workflow for rapid aerodynamic assessment of fan configurations.",
+        "learnings": "Advanced parametric modeling; deep understanding of BFM formulations.",
+        "next_steps": "Integration into multi-fidelity optimization loops."
+    },
+    {
+        "id": "sandwich-panel-testing",
+        "title": "Mechanical Testing of Lightweight Sandwich Panels",
+        "role": "Term Project (Academic collaboration with Lilium)",
+        "tags": [
+            "Testing",
+            "Manufacturing",
+            "FEA",
+            "Aerospace"
+        ],
+        "tools": [
+            "Siemens NX",
+            "Simcenter FEA",
+            "Shimadzu UTM",
+            "LOCTITE"
+        ],
+        "impact": "Engineered structural validation for eVTOL battery module compression plates using calibrated nonlinear FEM and UTM testing.",
+        "summary": "Performed quasi-static pull-out and in-plane shear testing of self-tapping inserts in CFRP-Foam-FR4 sandwich structures. Developed a calibrated nonlinear FEM using Simcenter FEA with orthotropic laminate definitions.",
+        "problem": "Validate the structural integrity of battery module compression plates under specific load introduction points for an eVTOL aircraft.",
+        "approach": "Parallel experimental and numerical approach: characterization through UTM testing followed by FEM correlation.",
+        "methods": "Quasi-static testing of 12 joint configurations; cohesive zone modeling in Simcenter for load-displacement replication.",
+        "validation": "Comparison of experimental load-displacement curves with FEM results to calibrate material and joint models.",
+        "results": "Identified optimal pilot hole sizes and thread types for maximizing pull-out strength in sandwich composites.",
+        "learnings": "Advanced understanding of joint behavior in thin CFRP skins and foam cores; proficiency in Simcenter FEA.",
+        "next_steps": "Testing under dynamic/fatigue loading conditions and high-temperature environments."
+    },
+    {
+        "id": "dep-aircraft-aero",
+        "title": "Aerodynamics of Distributed Electric Propulsion (DEP) Aircraft",
+        "role": "Bachelor Thesis Researcher",
+        "tags": [
+            "CFD",
+            "Aerodynamics",
+            "Propulsion",
+            "Research"
+        ],
+        "tools": [
+            "Ansys Fluent",
+            "HyperMesh",
+            "SolidWorks",
+            "LaTeX"
+        ],
+        "impact": "Modeled and simulated a DEP-modified Boeing 737-800, investigating lift/drag improvements and wake interaction effects.",
+        "summary": "Investigated the aerodynamic trade-offs of replacing conventional turbofans with wing-mounted DEP units, focusing on lift enhancement and winglet optimization.",
+        "problem": "Conventional aircraft struggle with efficiency at low speeds; DEP offers potential for high-lift enhancement and reduced noise.",
+        "approach": "Replace conventional engines with an array of smaller electric fans and analyze the aerodynamic impact on the wing.",
+        "methods": "CAD modeling in SolidWorks; high-fidelity meshing in HyperMesh; steady-state RANS simulations in Ansys Fluent.",
+        "validation": "Compared baseline 737-800 configurations with DEP variants to isolate the 'blown wing' effect.",
+        "results": "Achieved significant lift coefficient increase at high angles of attack; identified drag penalties associated with unit nacelles.",
+        "learnings": "Mastery of CFD workflows and high-fidelity meshing; deep dive into aero-propulsion integration.",
+        "next_steps": "Unsteady simulations to capture propeller-wing interaction more accurately."
+    },
+    {
+        "id": "rans-airfoil-performance",
+        "title": "High-Lift Airfoil Performance: RANS & XFOIL Validation",
+        "role": "ISAE Numerical Fluid Mechanics Project",
+        "tags": [
+            "CFD",
+            "Aerodynamics",
+            "Research"
+        ],
+        "tools": [
+            "RANS k-omega SST",
+            "XFOIL"
+        ],
+        "impact": "Validated high-lift airfoil performance using multiple fidelity solvers, comparing RANS k-omega SST with viscous-inviscid interaction codes.",
+        "summary": "Detailed aerodynamic study of a high-lift airfoil, investigating transition modeling and stall characteristics.",
+        "problem": "Accurately predicting stall and max lift coefficient in high-lift configurations.",
+        "approach": "Multi-fidelity comparison between RANS and XFOIL.",
+        "methods": "Grid sensitivity study; transition modeling (Gamma-Re-Theta); polar generation.",
+        "validation": "Comparison against experimental/professor reference data.",
+        "results": "Identified separation bubbles and stall mechanisms; confirmed solver reliability for specific flight regimes.",
+        "learnings": "Transition physics; RANS solver tuning; aerodynamic validation best practices.",
+        "next_steps": "3D wing analysis in high-lift configuration."
+    },
+    {
+        "id": "gpr-defect-mapping",
+        "title": "Subsurface Defect Mapping Using GPR",
+        "role": "NDT Researcher",
+        "tags": [
+            "Testing",
+            "Research",
+            "Automation"
+        ],
+        "tools": [
+            "GPR (GSSI Scan Mini)",
+            "RADAN 7"
+        ],
+        "impact": "Detected and sized ~40cm subsurface foam defects in concrete with high accuracy using Ground Penetrating Radar and signal processing.",
+        "summary": "Executed non-destructive inspection of concrete structures to map subsurface defects, calibrating dielectric properties and generating B- and C-scan profiles.",
+        "problem": "Detecting internal flaws in thick structures without destructive access.",
+        "approach": "Use GPR for high-frequency electromagnetic wave reflection analysis.",
+        "methods": "Calibration via backwall referencing; data collection across 64 scan paths; signal processing in RADAN 7.",
+        "validation": "Verification of defect size and depth using Time-of-Flight (TOF) and permittivity calculations.",
+        "results": "Successfully mapped a 40cm foam defect at 5cm depth; analyzed system accuracy and limitations.",
+        "learnings": "Experience with GPR hardware and signal processing software; understanding of wave propagation in dielectric media.",
+        "next_steps": "Integration of automated robotic scanning for larger surfaces."
+    },
+    {
+        "id": "rc-water-carrier",
+        "title": "Optimized Additive Manufacturing: RC Transport Vehicle",
+        "role": "TUM Additive Manufacturing Lab",
+        "tags": [
+            "Manufacturing",
+            "Testing",
+            "Automotive"
+        ],
+        "tools": [
+            "Siemens NX",
+            "PrusaSlicer",
+            "FDM"
+        ],
+        "impact": "Won top place for a 3D-printed RC car capable of transporting a full water bottle; followed by an exclusive BMW factory visit.",
+        "summary": "High-performance functional prototyping focusing on weight optimization and load-bearing capacity using FDM printing.",
+        "problem": "Carry a 500g payload on a lightweight 3D-printed chassis.",
+        "approach": "Topology optimization and functional integration of wheels and chassis.",
+        "methods": "NX-based design; material property testing; iterative prototyping.",
+        "validation": "Track testing under load.",
+        "results": "Secured top placement in group challenge.",
+        "learnings": "Design for Additive Manufacturing (DfAM); load-path optimization.",
+        "next_steps": "Integration of sensors for autonomous navigation."
+    },
+    {
+        "id": "leo-satellite-power",
+        "title": "Spacecraft Power Subsystem Architecture",
+        "role": "Systems Engineer",
+        "tags": [
+            "Systems",
+            "Research",
+            "Aerospace"
+        ],
+        "tools": [
+            "MATLAB",
+            "LaTeX",
+            "Sparkwing",
+            "GomSpace"
+        ],
+        "impact": "Architected the end-to-end power system for a LEO debris-tracking satellite, including orbital energy balance and hardware sizing.",
+        "summary": "Designed generation, storage, and distribution systems for an AI-based LEO mission, selecting mission-critical hardware and performing energy balance modeling.",
+        "problem": "Ensure continuous power supply for high-demand AI processing on a limited LEO cube-sat platform.",
+        "approach": "System-level modeling of generation vs consumption throughout the orbital cycle.",
+        "methods": "Orbital mechanics for solar flux calculation; component selection (EaglePicher batteries, Sparkwing arrays).",
+        "validation": "Worse-case scenario analysis (eclipse duration, peak load).",
+        "results": "Defined a robust 60W power bus with 20% margin for all mission phases.",
+        "learnings": "Space hardware standards and orbital energy budget workflows.",
+        "next_steps": "Integration of thermal management constraints into the power model."
+    },
+    {
+        "id": "baja-sae-buggy",
+        "title": "Baja SAE ATV Design & Integration",
+        "role": "Mechanical Designer",
+        "tags": [
+            "Manufacturing",
+            "Testing",
+            "Automotive"
+        ],
+        "tools": [
+            "SolidWorks",
+            "Manual Machining"
+        ],
+        "impact": "Engineered and assembled a Baja buggy frame with double-wishbone suspension, successfully validated against performance benchmarks.",
+        "summary": "Designed and fabricated core subsystems for a high-performance off-road vehicle, focusing on structural integrity and suspension geometry.",
+        "problem": "Develop a lightweight yet durable chassis for extreme off-road competition.",
+        "approach": "Iterative design focusing on occupant safety and vehicle dynamics.",
+        "methods": "Chassis modeling; suspension kinematics optimization; manual jig assembly and welding support.",
+        "validation": "Structural validation through stress testing and track performance.",
+        "results": "Completed vehicle integration with successful endurance testing.",
+        "learnings": "Practical manufacturing skills; suspension geometry; team-based engineering.",
+        "next_steps": "Weight reduction through carbon-fiber body panels."
+    }
+]

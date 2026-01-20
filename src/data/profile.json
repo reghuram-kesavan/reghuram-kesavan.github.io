@@ -1,0 +1,155 @@
+{
+    "name": "Reghuram Kesavan",
+    "title": "Aerospace Engineer | MSc candidate @ TUM & ISAE-Supaero",
+    "email": "rgkreghu989@gmail.com",
+    "phone": "+49 155 1055 6039",
+    "location": "Munich, Germany",
+    "linkedin": "https://linkedin.com/in/reghuramkesavan/",
+    "github": "https://github.com/reghuramk",
+    "website": "https://reghuram.kesavan.portfolio",
+    "summary": "Motivated and technically versatile Aerospace Engineering graduate student at the Technical University of Munich (TUM) with a research year at ISAE-Supaero. Specialized in parametric fan blade modeling and semi-analytical body-force methods (BFM). Industry experience includes structural validation of CFRP sandwich joints for eVTOL aircraft at Lilium and RC aircraft design at Feynman Aerospace.",
+    "education": [
+        {
+            "degree": "Master of Science in Aerospace Engineering",
+            "institution": "Technical University of Munich (TUM) & ISAE-Supaero",
+            "location": "Germany & France",
+            "period": "10/2023 - Ongoing",
+            "details": "Double-degree candidate. Research focus: Parametric Fan Blade Modelling using Python and B-splines. MSc Year 2 @ ISAE-Supaero."
+        },
+        {
+            "degree": "Bachelor of Technology (Honors) in Mechanical Engineering",
+            "institution": "APJ Abdul Kalam Technological University",
+            "location": "Kerala, India",
+            "period": "08/2018 - 08/2022",
+            "details": "Grade: 9.28/10. Dept Topper. Thesis on Distributed Electric Propulsion (DEP)."
+        }
+    ],
+    "experience": [
+        {
+            "company": "Lilium e-Aircraft GmbH",
+            "role": "Aircraft Design Engineer Intern",
+            "period": "04/2024 - 11/2024",
+            "location": "Munich, Germany",
+            "description": "Contributed to Cells Team (IESU). Managed structural testing workflows for battery module assemblies. Executed pull-out strength testing of inserts in CFRP-Foam-FR4 sandwich structures. Developed base plates and fixtures in Siemens NX with GD&T.",
+            "tools": [
+                "Siemens NX",
+                "Teamcenter PLM",
+                "Simcenter FEA"
+            ]
+        },
+        {
+            "company": "WARR Rocketry Club TUM",
+            "role": "Mechanical Engineer",
+            "period": "10/2023 - 04/2024",
+            "location": "Munich, Germany",
+            "description": "Enhanced structural performance of CFRP LOX/Ethanol tanks for EX-4 launch vehicle. Focused on laminate integrity and safe composite pressure vessel integration.",
+            "tools": [
+                "CFD",
+                "CAD"
+            ]
+        },
+        {
+            "company": "Feynman Aerospace LLP",
+            "role": "Aircraft Design Intern",
+            "period": "04/2023 - 10/2023",
+            "location": "Mumbai, India",
+            "description": "Designed high aspect-ratio RC aircraft. Performed airfoil selection and simulations in XFLR5/XFoil. Achieved 5% improvement in aerodynamic performance.",
+            "tools": [
+                "XFLR5",
+                "XFoil",
+                "SolidWorks"
+            ]
+        },
+        {
+            "company": "Kerala Minerals and Metals Limited",
+            "role": "Industrial Operation Intern",
+            "period": "04/2020 - 05/2020",
+            "location": "Kerala, India",
+            "description": "Evaluated surface treatment processes at Titanium Sponge Plant. Supported assembly and maintenance of twin-cylinder compressor systems.",
+            "tools": [
+                "Industrial Operations"
+            ]
+        }
+    ],
+    "skills": {
+        "CAD/PLM": [
+            "Siemens NX",
+            "SolidWorks",
+            "Teamcenter PLM",
+            "GD&T"
+        ],
+        "Simulation & CFD": [
+            "Ansys Fluent",
+            "Simcenter FEA",
+            "Star CCM+",
+            "XFoil",
+            "XFLR5",
+            "HyperMesh"
+        ],
+        "Manufacturing & NDT": [
+            "Additive Manufacturing (FDM)",
+            "NDT (GPR)",
+            "CNC Machining",
+            "Composite Fabrication"
+        ],
+        "Software & Tools": [
+            "Python",
+            "MATLAB",
+            "LaTeX",
+            "Arduino",
+            "C++",
+            "Cura",
+            "PrusaSlicer"
+        ]
+    },
+    "languages": [
+        {
+            "language": "Telugu",
+            "level": "Native"
+        },
+        {
+            "language": "English",
+            "level": "C1 (Fluent)"
+        },
+        {
+            "language": "Hindi",
+            "level": "B2"
+        },
+        {
+            "language": "Malayalam",
+            "level": "B2"
+        },
+        {
+            "language": "Tamil",
+            "level": "B2"
+        },
+        {
+            "language": "German",
+            "level": "A1"
+        }
+    ],
+    "leadership": [
+        "Head of 'Abrupt Family' dance team (WOD India auditions)",
+        "Secretary & Co-founder of Aerospace Club (Aeromodelling/Nano-sat)",
+        "Campus Ambassador for ASME & ISNT",
+        "Event Coordinator for Technical (ADVENT 22) and Cultural (CULTAWAY 22) Fests"
+    ],
+    "quick_view": {
+        "bullets": [
+            "MSc Aerospace Engineering candidate at TUM & ISAE-Supaero.",
+            "Research focus: Parametric Fan Blade Modelling & BFM (Python/B-splines).",
+            "Interned as Structural Design Engineer at Lilium (eVTOL battery systems).",
+            "Expertise in CFRP sandwich testing, FEM correlation, and Siemens NX.",
+            "Aerodynamics specialist (CFD) with B.Tech Thesis on DEP Aircraft.",
+            "Multilingual: English (C1), German (A1), and 4 Indian languages."
+        ],
+        "education": "MSc Aerospace (TUM/ISAE) | B.Tech Mechanical (Honors)",
+        "locations": "Munich, Germany | Bangalore/Kerala, India",
+        "key_tools": "Siemens NX (Expert), Python (B-splines), Ansys Fluent, Simcenter FEA",
+        "links": [
+            "LinkedIn",
+            "GitHub",
+            "Resume"
+        ]
+    }
+}

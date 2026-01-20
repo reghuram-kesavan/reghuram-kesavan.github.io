@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  /* High-Visibility Stealth Fusion v4 */
+  --color-background: oklch(0.02 0.01 260);
+  /* Deep Obsidian */
+  --color-foreground: oklch(1 0 0);
+  /* Pure White for Max Visibility */
+
+  --color-primary: oklch(0.65 0.3 25);
+  /* High-Lume Racing Red */
+  --color-secondary: oklch(0.6 0.25 250);
+  /* High-Lume Azure */
+  --color-accent: oklch(0.85 0.15 110);
+  /* HUD Amber (Brightened) */
+
+  --color-border: oklch(1 0 0 / 0.15);
+  /* Strengthened Borders */
+  --color-card: oklch(0.12 0.02 260 / 0.95);
+  /* More Opaque for Readability */
+
+  --font-inter: "Inter", ui-sans-serif, system-ui;
+  --font-outfit: "Outfit", ui-sans-serif, system-ui;
+  --font-mono: "Fira Code", monospace;
+}
+
+/* Professional Mode Styling */
+[data-protocol="professional"] {
+  --color-primary: oklch(0.6 0.2 240);
+  /* Brighter Aero Blue */
+  --color-background: oklch(0.05 0.02 240);
+  --color-secondary: oklch(0.98 0.01 240);
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground transition-all duration-1000;
+    font-family: var(--font-inter);
+    cursor: crosshair;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Force visibility on large text and headers */
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: white !important;
+    text-shadow: 0 0 40px oklch(0 0 0 / 0.8);
+  }
+
+  p,
+  span,
+  li {
+    color: oklch(1 0 0 / 0.95) !important;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply backdrop-blur-3xl border border-white/20 relative overflow-hidden transition-all duration-700;
+    background: oklch(0.1 0.02 260 / 0.85);
+    /* Semi-solid for text contrast */
+    box-shadow: 0 20px 80px oklch(0 0 0 / 0.9);
+  }
+
+  .hud-corner::before,
+  .hud-corner::after {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 1000ms;
+    border-color: var(--color-primary) !important;
+    opacity: 1 !important;
+  }
+
+  .text-speed {
+    transform: skewX(-15deg) !important;
+    letter-spacing: -0.05em !important;
+  }
+
+  .glow-red {
+    filter: drop-shadow(0 0 25px oklch(0.65 0.3 25 / 0.6));
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, oklch(1 0 0 / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(1 0 0 / 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Advanced HUD scanning with higher luminance */
+  .scan-bar {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 15vh;
+    background: linear-gradient(to bottom, transparent, var(--color-primary), transparent);
+    animation: scan-vertical 10s linear infinite;
+    pointer-events: none;
+    z-index: 99;
+    opacity: 0.15;
+    mix-blend-mode: screen;
+  }
+
+  @keyframes scan-vertical {
+    0% {
+      transform: translateY(-100vh);
+    }
+
+    100% {
+      transform: translateY(200vh);
+    }
+  }
+}
