@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowLeft, CheckCircle2, Info, Layout, Layers, Lightbulb, TrendingUp, Cpu, Target } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Info, Layout, Layers, TrendingUp, Cpu } from "lucide-react";
 import Link from "next/link";
 
 export default function ProjectClient({ project }: { project: any }) {
