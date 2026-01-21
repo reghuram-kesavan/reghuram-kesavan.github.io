@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Zap, Target } from "lucide-react";
+import { ArrowUpRight, Target } from "lucide-react";
 import Link from "next/link";
 
 interface Project {

@@ -52,7 +52,7 @@ export default function AwardsPage() {
                                 <span>World of Dance India Auditions</span>
                                 <Award className="h-5 w-5" />
                             </div>
-                            <h3 className="text-xl font-bold">Head of Dance Team 'Abrupt Family'</h3>
+                            <h3 className="text-xl font-bold">Head of Dance Team &apos;Abrupt Family&apos;</h3>
                             <p className="mt-2 text-sm text-foreground/60">
                                 Led a high-performance dance crew to represent Kerala at the national level, overseeing choreography and team synchronization.
                             </p>

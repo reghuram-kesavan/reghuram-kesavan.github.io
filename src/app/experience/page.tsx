@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import profile from "@/data/profile.json";
-import { Briefcase, MapPin, Calendar, Terminal, Target } from "lucide-react";
+import { Briefcase, MapPin, Calendar, Target } from "lucide-react";
 
 export default function ExperiencePage() {
     return (

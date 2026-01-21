@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Shield, Zap, Rocket, GraduationCap, Terminal } from "lucide-react";
+import { Zap, GraduationCap, Terminal } from "lucide-react";
 
 export function ProtocolSwitcher() {
     const [protocol, setProtocol] = useState<"creative" | "professional">("creative");
@@ -11,8 +11,11 @@ export function ProtocolSwitcher() {
     useEffect(() => {
         const saved = localStorage.getItem("protocol") as "creative" | "professional";
         if (saved) {
-            setProtocol(saved);
-            document.documentElement.setAttribute("data-protocol", saved);
+            // Defer state update to avoid sync render warning
+            setTimeout(() => {
+                setProtocol(saved);
+                document.documentElement.setAttribute("data-protocol", saved);
+            }, 0);
         }
     }, []);
 

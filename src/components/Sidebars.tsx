@@ -1,6 +1,6 @@
 "use client";
 
-import { Linkedin, Github, Mail, Instagram, Twitter, Music, Gamepad2, Flag } from "lucide-react";
+import { Linkedin, Github, Music, Gamepad2, Flag } from "lucide-react";
 import { motion } from "framer-motion";
 import profile from "@/data/profile.json";
 

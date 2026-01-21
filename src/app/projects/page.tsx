@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ProjectCard } from "@/components/ProjectCard";
 import projects from "@/data/projects.json";
 import { useState } from "react";
-import { Filter, Layers, Database, Cpu, Globe } from "lucide-react";
+import { Layers, Database, Cpu } from "lucide-react";
 
 const allTags = Array.from(new Set(projects.flatMap((p) => p.tags)));
 

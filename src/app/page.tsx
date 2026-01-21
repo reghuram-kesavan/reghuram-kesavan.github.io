@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronRight, Activity, Zap, Wind, Terminal as TerminalIcon, Target, School, Shield, Box, Cpu, Eye } from "lucide-react";
+import { ArrowRight, Terminal as TerminalIcon, Eye } from "lucide-react";
 import Link from "next/link";
 import { QuickView } from "@/components/QuickView";
 import { ProjectCard } from "@/components/ProjectCard";

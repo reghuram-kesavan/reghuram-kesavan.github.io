@@ -85,7 +85,7 @@ export default function ContactPage() {
                         </h3>
 
                         <p className="text-white/40 mb-16 text-xl max-w-sm">
-                            "Precision in communication is the first stage of aerospace success."
+                            &quot;Precision in communication is the first stage of aerospace success.&quot;
                         </p>
 
                         <a

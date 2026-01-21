@@ -1,4 +1,4 @@
-import { MapPin, GraduationCap, Wrench, FileText, Activity, Terminal as TerminalIcon, Shield } from "lucide-react";
+import { MapPin, GraduationCap, FileText, Activity, Shield } from "lucide-react";
 import profile from "@/data/profile.json";
 import Link from "next/link";
 

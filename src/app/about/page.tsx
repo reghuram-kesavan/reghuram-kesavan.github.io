@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import profile from "@/data/profile.json";
-import { GraduationCap, Languages, Target, User, Cpu, Box } from "lucide-react";
+import { GraduationCap, Languages, Target, User } from "lucide-react";
 
 export default function AboutPage() {
     return (
@@ -26,7 +26,7 @@ export default function AboutPage() {
                                 With a year completed at <span className="text-secondary italic">ISAE-Supaero</span> in Toulouse, I bring a unique cross-European perspective to aerospace R&D, focused on the intersection of structural integrity and aerodynamic efficiency.
                             </p>
                             <p>
-                                Whether it's calibrating non-linear FEM models for eVTOL battery systems at <span className="text-primary">Lilium</span> or leading a dance crew to national stages, I thrive at the friction point where absolute precision meets pure creative kinetic flow.
+                                Whether it&apos;s calibrating non-linear FEM models for eVTOL battery systems at <span className="text-primary">Lilium</span> or leading a dance crew to national stages, I thrive at the friction point where absolute precision meets pure creative kinetic flow.
                             </p>
                         </div>
                     </section>

@@ -8,7 +8,6 @@ import {
     FileText,
     Sparkles,
     Activity,
-    ChevronRight,
     Download,
     RotateCcw,
     Globe,
@@ -239,7 +238,7 @@ export default function CareerSuite() {
                                     </h3>
                                     <p className="text-[10px] text-white/10 uppercase tracking-widest leading-loose">
                                         Await_Target_Input_for_Analysis<br />
-                                        Select 'Execute_Mission' to begin payload optimization.
+                                        Select &apos;Execute_Mission&apos; to begin payload optimization.
                                     </p>
                                 </motion.div>
                             )}

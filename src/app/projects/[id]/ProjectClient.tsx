@@ -4,7 +4,21 @@ import { motion } from "framer-motion";
 import { ArrowLeft, CheckCircle2, Info, Layout, Layers, TrendingUp, Cpu } from "lucide-react";
 import Link from "next/link";
 
-export default function ProjectClient({ project }: { project: any }) {
+interface Project {
+    title: string;
+    summary: string;
+    tags: string[];
+    problem: string;
+    approach: string;
+    methods: string;
+    tools: string[];
+    validation: string;
+    impact: string;
+    results: string;
+    role: string;
+}
+
+export default function ProjectClient({ project }: { project: Project }) {
     return (
         <div className="container mx-auto px-6 py-24">
             <Link
