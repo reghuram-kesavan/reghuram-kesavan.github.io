@@ -14,7 +14,7 @@ const fira = Fira_Code({ subsets: ["latin"], variable: "--font-mono" });
 export const metadata: Metadata = {
   title: "reghuram.kesavan.portfolio // PORTFOLIO_ARCHIVE",
   description: "Senior Aerospace Engineer | TUM MSc candidate | ISAE-Supaero",
-  metadataBase: new URL("https://reghuram.kesavan.portfolio"),
+  metadataBase: new URL("https://reghuram-kesavan.github.io"),
   alternates: {
     canonical: "/",
   },
