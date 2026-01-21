@@ -32,6 +32,7 @@ export default function Home() {
 
             {/* Main Image with Mask */}
             <div className="relative z-10 overflow-hidden rounded-[4rem] border-4 border-white/10 shadow-2xl glass-panel">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/profile-hero.png"
                 alt="Reghuram Kesavan"
