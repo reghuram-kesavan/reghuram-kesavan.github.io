@@ -1,105 +1,129 @@
 {
     "name": "Reghuram Kesavan",
-    "title": "Aerospace Engineer | MSc candidate @ TUM & ISAE-Supaero",
+    "title": "Aerospace Engineer | Aerodynamics · CFD · Flight Physics · Scientific Computing",
     "email": "rgkreghu989@gmail.com",
     "phone": "+49 155 1055 6039",
-    "location": "Munich, Germany",
+    "location": "Toulouse, France",
     "linkedin": "https://linkedin.com/in/reghuramkesavan/",
-    "github": "https://github.com/reghuramk",
-    "website": "https://reghuram-kesavan.github.io",
-    "summary": "Motivated and technically versatile Aerospace Engineering graduate student at the Technical University of Munich (TUM) with a research year at ISAE-Supaero. Specialized in parametric fan blade modeling and semi-analytical body-force methods (BFM). Industry experience includes structural validation of CFRP sandwich joints for eVTOL aircraft at Lilium and RC aircraft design at Feynman Aerospace.",
+    "github": "https://github.com/reghuramkesavan",
+    "website": "https://reghuram-kesavan.vercel.app",
+    "summary": "Aerospace Engineer completing the Master in Aerospace Engineering at ISAE-SUPAERO (Major: Advanced Aerodynamics & Propulsion), with graduate aerospace studies at the Technical University of Munich (TUM). Specialized in low- and high-fidelity aerodynamics, RANS CFD, scientific Python tool development (VOROM-X, ApexSim, TRACE FanGEO), high-lift experimental wind-tunnel testing, and propulsion–airframe interaction, supported by professional aerospace test and mechanical engineering experience at Lilium.",
     "education": [
         {
-            "degree": "Master of Science in Aerospace Engineering",
-            "institution": "Technical University of Munich (TUM) & ISAE-Supaero",
-            "location": "Germany & France",
-            "period": "10/2023 - Ongoing",
-            "details": "Double-degree candidate. Research focus: Parametric Fan Blade Modelling using Python and B-splines. MSc Year 2 @ ISAE-Supaero."
+            "degree": "Master in Aerospace Engineering (Year 2)",
+            "institution": "ISAE-SUPAERO",
+            "location": "Toulouse, France",
+            "period": "2025 – Expected Dec 2026",
+            "details": "Major: Advanced Aerodynamics and Propulsion. Key Coursework & Verified Grades: Advanced Aerodynamics (15/20), Numerical Fluid Mechanics (15/20), Fluid–Structure Interaction (16/20), Project Management (20/20), Computational Aeroacoustics. Master's Thesis on TRACE FanGEO turbomachinery design workflow."
         },
         {
-            "degree": "Bachelor of Technology (Honors) in Mechanical Engineering",
+            "degree": "Graduate Aerospace Engineering Studies",
+            "institution": "Technical University of Munich (TUM)",
+            "location": "Munich, Germany",
+            "period": "2023 – 2025",
+            "details": "Completed 57 ECTS in Aircraft Design, Aircraft Performance, Theoretical & Experimental Aerodynamics, Composite Materials & Structures, Control Engineering, Aeroelasticity, Aerospace Structures."
+        },
+        {
+            "degree": "Bachelor of Technology (Honours) in Mechanical Engineering",
             "institution": "APJ Abdul Kalam Technological University",
             "location": "Kerala, India",
-            "period": "08/2018 - 08/2022",
-            "details": "Grade: 9.28/10. Dept Topper. Thesis on Distributed Electric Propulsion (DEP)."
+            "period": "2018 – 2022",
+            "details": "Official CGPA: 9.28 / 10.0. Honours Thesis on Aerodynamics of Passenger Aircraft with Distributed Electric Propulsion (DEP)."
         }
     ],
     "experience": [
         {
-            "company": "Lilium e-Aircraft GmbH",
-            "role": "Aircraft Design Engineer Intern",
-            "period": "04/2024 - 11/2024",
+            "company": "Lilium eAircraft GmbH",
+            "role": "Mechanical Design Engineer Intern",
+            "period": "04/2024 – 11/2024",
             "location": "Munich, Germany",
-            "description": "Contributed to Cells Team (IESU). Managed structural testing workflows for battery module assemblies. Executed pull-out strength testing of inserts in CFRP-Foam-FR4 sandwich structures. Developed base plates and fixtures in Siemens NX with GD&T.",
+            "description": "Defined structural test requirements and designed custom test fixtures and support hardware for lightweight composite sandwich panels in Siemens NX with ASME Y14.5 GD&T. Conducted pre-test nonlinear FEM in ANSYS Workbench to predict stress concentrations and fixture stiffness, managing multi-part assemblies, drawing packages, and engineering changes under controlled PDM workflows in Teamcenter.",
             "tools": [
                 "Siemens NX",
+                "ASME Y14.5 GD&T",
+                "ANSYS Workbench",
                 "Teamcenter PLM",
-                "Simcenter FEA"
-            ]
-        },
-        {
-            "company": "WARR Rocketry Club TUM",
-            "role": "Mechanical Engineer",
-            "period": "10/2023 - 04/2024",
-            "location": "Munich, Germany",
-            "description": "Enhanced structural performance of CFRP LOX/Ethanol tanks for EX-4 launch vehicle. Focused on laminate integrity and safe composite pressure vessel integration.",
-            "tools": [
-                "CFD",
-                "CAD"
+                "UTM Testing"
             ]
         },
         {
             "company": "Feynman Aerospace LLP",
             "role": "Aircraft Design Intern",
-            "period": "04/2023 - 10/2023",
+            "period": "04/2021 – 10/2021",
             "location": "Mumbai, India",
-            "description": "Designed high aspect-ratio RC aircraft. Performed airfoil selection and simulations in XFLR5/XFoil. Achieved 5% improvement in aerodynamic performance.",
+            "description": "Performed low-Reynolds-number aerodynamic and configuration analysis for an ~2 m fixed-wing UAV using XFLR5 and ANSYS Fluent; generated 3D surface geometry in SolidWorks and supported prototype flight testing and subsequent aero design iteration.",
             "tools": [
                 "XFLR5",
-                "XFoil",
-                "SolidWorks"
+                "ANSYS Fluent",
+                "SolidWorks",
+                "Low-Re Aerodynamics"
+            ]
+        },
+        {
+            "company": "WARR Rocketry Club TUM",
+            "role": "Mechanical Engineer / Structural Analysis",
+            "period": "10/2023 – 04/2024",
+            "location": "Munich, Germany",
+            "description": "Enhanced structural performance and evaluated buckling margins of CFRP cryogenic propellant tanks for student sounding rockets under combined internal pressure and axial launch loads.",
+            "tools": [
+                "ANSYS FEA",
+                "Composite Laminates",
+                "Buckling Analysis",
+                "CAD"
             ]
         },
         {
             "company": "Kerala Minerals and Metals Limited",
             "role": "Industrial Operation Intern",
-            "period": "04/2020 - 05/2020",
+            "period": "04/2020 – 05/2020",
             "location": "Kerala, India",
-            "description": "Evaluated surface treatment processes at Titanium Sponge Plant. Supported assembly and maintenance of twin-cylinder compressor systems.",
+            "description": "Evaluated surface treatment processes at Titanium Sponge Plant. Supported assembly and maintenance of industrial compressor systems.",
             "tools": [
-                "Industrial Operations"
+                "Industrial Operations",
+                "Process Engineering"
             ]
         }
     ],
     "skills": {
-        "CAD/PLM": [
+        "Aerodynamics & Flight Physics": [
+            "RANS CFD",
+            "High-Lift Aerodynamics",
+            "Aircraft Performance & Trim",
+            "Static Margin & Stability Derivatives",
+            "Vortex Lattice Method (VLM)",
+            "Trefftz Induced Drag",
+            "Propulsion–Airframe Interaction"
+        ],
+        "CFD & Aero Solvers": [
+            "ANSYS Fluent",
+            "SU2",
+            "XFOIL",
+            "XFLR5",
+            "Structured Multi-Block Meshing",
+            "Boundary Layer Inflation (y⁺ < 1)",
+            "Grid Convergence (GCI)"
+        ],
+        "Programming & Scientific Computing": [
+            "Python (NumPy, SciPy, Matplotlib)",
+            "MATLAB",
+            "Git / GitHub",
+            "Linux / Bash",
+            "Workflow Automation",
+            "Parametric Scripting"
+        ],
+        "CAD, FEA & PLM": [
             "Siemens NX",
             "SolidWorks",
-            "Teamcenter PLM",
-            "GD&T"
+            "GD&T (ASME Y14.5)",
+            "ANSYS Workbench (Nonlinear/Static FEA)",
+            "Teamcenter PLM"
         ],
-        "Simulation & CFD": [
-            "Ansys Fluent",
-            "Simcenter FEA",
-            "Star CCM+",
-            "XFoil",
-            "XFLR5",
-            "HyperMesh"
-        ],
-        "Manufacturing & NDT": [
-            "Additive Manufacturing (FDM)",
-            "NDT (GPR)",
-            "CNC Machining",
-            "Composite Fabrication"
-        ],
-        "Software & Tools": [
-            "Python",
-            "MATLAB",
-            "LaTeX",
-            "Arduino",
-            "C++",
-            "Cura",
-            "PrusaSlicer"
+        "Methods & Testing": [
+            "Wind-Tunnel Testing",
+            "Surrogate Modelling (Kriging/Polynomial)",
+            "Design of Experiments (DOE)",
+            "Aerodynamic Database Assembly",
+            "Numerical Verification Gates"
         ]
     },
     "languages": [
@@ -126,6 +150,10 @@
         {
             "language": "German",
             "level": "A1"
+        },
+        {
+            "language": "French",
+            "level": "A1 (Basic, Improving)"
         }
     ],
     "leadership": [
@@ -136,16 +164,17 @@
     ],
     "quick_view": {
         "bullets": [
-            "MSc Aerospace Engineering candidate at TUM & ISAE-Supaero.",
-            "Research focus: Parametric Fan Blade Modelling & BFM (Python/B-splines).",
-            "Interned as Structural Design Engineer at Lilium (eVTOL battery systems).",
-            "Expertise in CFRP sandwich testing, FEM correlation, and Siemens NX.",
-            "Aerodynamics specialist (CFD) with B.Tech Thesis on DEP Aircraft.",
-            "Multilingual: English (C1), German (A1), and 4 Indian languages."
+            "Master in Aerospace Engineering candidate at ISAE-SUPAERO (Advanced Aerodynamics & Propulsion).",
+            "Completed 57 ECTS in Graduate Aerospace Studies at Technical University of Munich (TUM).",
+            "Developed VOROM-X: 3D VLM & Trefftz-plane induced drag tool in scientific Python (196+1 tests).",
+            "Executed experimental wind-tunnel testing & Transition-SST RANS high-lift study on HLHLSD4 airfoil.",
+            "Engineered automated CFD pipelines and surrogate models in ApexSim with numerical evidence gates.",
+            "Former Mechanical Design Intern at Lilium eAircraft: Siemens NX GD&T test hardware & nonlinear FEA.",
+            "Fixed-wing UAV aerodynamic analysis and prototype flight-test support at Feynman Aerospace."
         ],
-        "education": "MSc Aerospace (TUM/ISAE) | B.Tech Mechanical (Honors)",
-        "locations": "Munich, Germany | Bangalore/Kerala, India",
-        "key_tools": "Siemens NX (Expert), Python (B-splines), Ansys Fluent, Simcenter FEA",
+        "education": "ISAE-SUPAERO (MSc Year 2) | TUM (Graduate Studies) | KTU (B.Tech Hons, 9.28/10)",
+        "locations": "Toulouse, France | Open to Global Relocation",
+        "key_tools": "Python (NumPy/SciPy), ANSYS Fluent, SU2, XFOIL, Siemens NX, GD&T, Teamcenter",
         "links": [
             "LinkedIn",
             "GitHub",
