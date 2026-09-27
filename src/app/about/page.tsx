@@ -20,10 +20,10 @@ export default function AboutPage() {
                         </h1>
                         <div className="space-y-10 text-2xl font-bold leading-relaxed text-white">
                             <p>
-                                My name is <span className="text-primary">Reghuram Kesavan</span>. I am a technically versatile aerospace engineer currently pursuing my Master of Science at the <span className="underline decoration-primary">Technical University of Munich (TUM)</span>.
+                                My name is <span className="text-primary">Reghuram Kesavan</span>. I am a technically versatile aerospace engineer completing the Master in Aerospace Engineering at <span className="underline decoration-primary">ISAE-SUPAERO</span> in Toulouse, specialising in Advanced Aerodynamics & Propulsion.
                             </p>
                             <p>
-                                With a year completed at <span className="text-secondary italic">ISAE-Supaero</span> in Toulouse, I bring a unique cross-European perspective to aerospace R&D, focused on the intersection of structural integrity and aerodynamic efficiency.
+                                Having completed 57 ECTS of graduate aerospace engineering coursework at the <span className="text-secondary italic">Technical University of Munich (TUM)</span>, I combine cross-European academic rigor with deep hands-on expertise in low- and high-fidelity aerodynamics, scientific computing, and structural test hardware.
                             </p>
                             <p>
                                 Whether it&apos;s calibrating non-linear FEM models for eVTOL battery systems at <span className="text-primary">Lilium</span> or leading a dance crew to national stages, I thrive at the friction point where absolute precision meets pure creative kinetic flow.

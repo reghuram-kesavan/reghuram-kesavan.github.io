@@ -132,9 +132,10 @@ export default function Home() {
           </h2>
           <div className="grid gap-8">
             {[
-              { label: "Research Focus", val: "Parametric Fan Blade Modelling & BFM (Python/B-splines)" },
-              { label: "Industrial Phase", val: "Structural Design at Lilium (eVTOL Battery Systems)" },
-              { label: "Validated Skills", val: "CFRP Testing, FEM Correlation, Siemens NX, CFD" }
+              { label: "Specialisation", val: "Advanced Aerodynamics & Propulsion (ISAE-SUPAERO) · Aircraft Design (TUM)" },
+              { label: "Scientific Software", val: "VOROM-X (3D VLM/Trefftz Drag) · ApexSim (Automated CFD) · TRACE FanGEO" },
+              { label: "Industrial Experience", val: "Lilium eAircraft (NX/GD&T Test Fixtures & Pre-Test FEA) · Feynman (UAV Flight Test)" },
+              { label: "Experimental & CFD", val: "Wind-Tunnel Testing (HLHLSD4 at Re=10⁶) · Transition-SST RANS · Distributed Propulsion" }
             ].map((item, i) => (
               <div key={i} className="glass-panel p-8 rounded-2xl border-l-4 border-primary">
                 <div className="text-[10px] font-black uppercase tracking-[0.4em] text-primary mb-2">{item.label}</div>
