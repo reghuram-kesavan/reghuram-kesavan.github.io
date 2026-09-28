@@ -1,107 +1,63 @@
-"use client";
-
-import { motion } from "framer-motion";
+import Link from "next/link";
 import profile from "@/data/profile.json";
-import { GraduationCap, Languages, Target, User } from "lucide-react";
-
-export default function AboutPage() {
-    return (
-        <div className="container mx-auto px-6 py-24">
-            <div className="grid gap-16 lg:grid-cols-12">
-                {/* Left Column: Narrative */}
-                <div className="lg:col-span-12 xl:col-span-8">
-                    <section className="mb-20">
-                        <div className="flex items-center gap-4 text-primary text-[12px] font-black uppercase tracking-[0.6em] mb-10">
-                            <User className="h-4 w-4" />
-                            Identity_Matrix
-                        </div>
-                        <h1 className="font-outfit text-6xl font-black tracking-tighter md:text-8xl mb-12 text-speed text-white">
-                            Engineering is about <span className="text-primary italic">solving</span> the impossible.
-                        </h1>
-                        <div className="space-y-10 text-2xl font-bold leading-relaxed text-white">
-                            <p>
-                                My name is <span className="text-primary">Reghuram Kesavan</span>. I am a technically versatile aerospace engineer completing the Master in Aerospace Engineering at <span className="underline decoration-primary">ISAE-SUPAERO</span> in Toulouse, specialising in Advanced Aerodynamics & Propulsion.
-                            </p>
-                            <p>
-                                Having completed 57 ECTS of graduate aerospace engineering coursework at the <span className="text-secondary italic">Technical University of Munich (TUM)</span>, I combine cross-European academic rigor with deep hands-on expertise in low- and high-fidelity aerodynamics, scientific computing, and structural test hardware.
-                            </p>
-                            <p>
-                                Whether it&apos;s calibrating non-linear FEM models for eVTOL battery systems at <span className="text-primary">Lilium</span> or leading a dance crew to national stages, I thrive at the friction point where absolute precision meets pure creative kinetic flow.
-                            </p>
-                        </div>
-                    </section>
-
-                    <section className="mb-20">
-                        <h2 className="mb-12 flex items-center text-4xl font-black uppercase tracking-tighter text-white">
-                            <GraduationCap className="mr-6 h-10 w-10 text-primary" />
-                            Academic_Nodes
-                        </h2>
-                        <div className="space-y-12">
-                            {profile.education.map((edu, idx) => (
-                                <motion.div
-                                    key={idx}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    className="glass-panel hud-corner p-10 rounded-3xl"
-                                >
-                                    <p className="text-[12px] font-black tracking-[0.4em] text-primary mb-4">{edu.period}</p>
-                                    <h3 className="text-3xl font-black text-white mb-2">{edu.degree}</h3>
-                                    <div className="mt-4 flex flex-col md:flex-row gap-4 text-xl font-bold text-white/40">
-                                        <span className="text-white">{edu.institution}</span>
-                                        <span className="hidden md:block">•</span>
-                                        <span>{edu.location}</span>
-                                    </div>
-                                    <p className="mt-8 text-xl text-white/60 leading-relaxed font-medium">{edu.details}</p>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </section>
-                </div>
-
-                {/* Right Column: Values & Languages */}
-                <div className="lg:col-span-12 xl:col-span-4">
-                    <div className="sticky top-32 space-y-10">
-                        <div className="glass-panel hud-corner p-10 rounded-[3rem] border-2 border-primary/20">
-                            <h3 className="mb-8 flex items-center font-black uppercase tracking-[0.4em] text-xl text-white border-b border-white/10 pb-6">
-                                <Target className="mr-4 h-6 w-6 text-primary" />
-                                Core_Values
-                            </h3>
-                            <ul className="space-y-8">
-                                <li className="flex flex-col gap-2">
-                                    <div className="flex items-center gap-2">
-                                        <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                                        <strong className="text-lg uppercase tracking-widest text-primary">Technical Integrity</strong>
-                                    </div>
-                                    <p className="text-lg font-bold text-white/60 pl-4">Ensuring every simulation matches physical reality through rigorous validation.</p>
-                                </li>
-                                <li className="flex flex-col gap-2">
-                                    <div className="flex items-center gap-2">
-                                        <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                                        <strong className="text-lg uppercase tracking-widest text-primary">Innovation_Flux</strong>
-                                    </div>
-                                    <p className="text-lg font-bold text-white/60 pl-4">Leveraging additive manufacturing and digital twins for ultra-fast iteration.</p>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className="glass-panel hud-corner p-10 rounded-[3rem] border-2 border-secondary/20">
-                            <h3 className="mb-8 flex items-center font-black uppercase tracking-[0.4em] text-xl text-white border-b border-white/10 pb-6">
-                                <Languages className="mr-4 h-6 w-6 text-secondary" />
-                                Comm_Sync
-                            </h3>
-                            <div className="grid grid-cols-1 gap-6">
-                                {profile.languages.map((lang, idx) => (
-                                    <div key={idx} className="flex items-center justify-between group">
-                                        <span className="text-2xl font-black text-white group-hover:text-secondary transition-colors">{lang.language}</span>
-                                        <span className="text-[12px] font-black uppercase tracking-widest text-white/30">{lang.level}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+export default function About() {
+  return (
+    <div className="shell section">
+      <p className="eyebrow">About / Reghuram Kesavan</p>
+      <h1 className="page-title">
+        An engineer’s curiosity.
+        <br />
+        <em>A creative perspective.</em>
+      </h1>
+      <p className="section-description">
+        I’m completing the Master in Aerospace Engineering at ISAE-SUPAERO in
+        Toulouse, specialising in Advanced Aerodynamics & Propulsion, following
+        graduate aerospace studies at TUM.
+      </p>
+      <p className="section-description">
+        My work spans aerodynamic modelling, scientific computing and aerospace
+        test hardware.{" "}
+      </p>
+      <div className="about-grid">
+        <section>
+          <p className="eyebrow">Education</p>
+          <Link className="text-link" href="/profile">
+            Explore the complete profile archive ↗
+          </Link>
+          {profile.education.map((e) => (
+            <article className="education-row" key={e.institution}>
+              <p className="eyebrow">
+                {e.period} · {e.location}
+              </p>
+              <h2>{e.institution}</h2>
+              <h3>{e.degree}</h3>
+              <p>{e.details}</p>
+            </article>
+          ))}
+        </section>
+        <aside className="profile-aside">
+          <p className="eyebrow">Current focus</p>
+          <h3>TRACE FanGEO</h3>
+          <p>
+            Requirement-driven fan geometry to body-force model preprocessing.
+            Master’s thesis at ISAE-SUPAERO, DAEP.
+          </p>
+          <Link className="text-link" href="/projects/trace-fangeo">
+            Explore the project ↗
+          </Link>
+          <p className="eyebrow" style={{ marginTop: 40 }}>
+            Languages · self-reported
+          </p>
+          {profile.languages.map((l) => (
+            <p key={l.language}>
+              {l.language} <span>{l.level}</span>
+            </p>
+          ))}
+          <Link className="text-link personal-only" href="/awards">
+            Leadership & activities ↗
+          </Link>
+        </aside>
+      </div>
+    </div>
+  );
 }

@@ -1,0 +1,50 @@
+{
+  "vorom-x-aerodynamics": [
+    "Développement d’un prototype Python pour la charge alaire, la traînée induite et les études de configuration, appliqué à une aile volante intégrée.",
+    "Python-Forschungsprototyp für Flügellasten, induzierten Widerstand und Konfigurationsstudien, angewandt auf ein Blended-Wing-Body-Konzept."
+  ],
+  "high-lift-aerodynamics": [
+    "Comparaison RANS avec transition et XFOIL sur le profil HLHLSD4 ; étude de la séparation et de la sensibilité au maillage.",
+    "Vergleich von transitionssensitivem RANS und XFOIL am HLHLSD4-Profil; Untersuchung von Ablösung und Netzempfindlichkeit."
+  ],
+  "apexsim-aerodynamics": [
+    "Chaîne Python reliant études CFD automatisées, cartographies aérodynamiques et exploration des performances d’un véhicule.",
+    "Python-Workflow für automatisierte CFD-Studien, aerodynamische Kennfelder und die Untersuchung der Fahrzeugleistung."
+  ],
+  "trace-fangeo": [
+    "Thèse sur l’écoulement méridien, la paramétrisation des pales et le prétraitement géométrique pour les modèles de forces volumiques.",
+    "Masterarbeit zu Throughflow-Modellierung, Schaufelparametrisierung und geometrischer Vorverarbeitung für Body-Force-Modelle."
+  ],
+  "lilium-sandwich-structures": [
+    "Conception de dispositifs d’essai, exigences de test et analyses par éléments finis pour des structures sandwich composites.",
+    "Prüfvorrichtungen, Versuchsanforderungen und vorbereitende FE-Analysen für Composite-Sandwichstrukturen."
+  ],
+  "feynman-fixed-wing-uav": [
+    "Analyse aérodynamique à faible Reynolds, conception CAO et soutien aux essais d’un prototype de drone à voilure fixe.",
+    "Aerodynamische Analyse bei kleinen Reynolds-Zahlen, CAD und Unterstützung bei Prototypenflugtests eines Starrflügeldrohnenprojekts."
+  ],
+  "dep-aircraft-aero": [
+    "Étude RANS d’une aile de transport avec nacelles distribuées, comparée à une configuration de référence sans nacelles.",
+    "RANS-Untersuchung eines Transportflugzeugflügels mit verteilten Gondeln im Vergleich zu einer Referenz ohne Gondeln."
+  ],
+  "warr-cryotank-fea": [
+    "Analyse structurale et étude du flambement d’un réservoir cryogénique composite dans une équipe étudiante de fusées.",
+    "Strukturanalyse und Beuluntersuchung eines Composite-Kryotanks in einem studentischen Raketenteam."
+  ],
+  "gpr-defect-mapping": [
+    "Travaux pratiques de contrôle non destructif avec radar à pénétration de sol et interprétation des signaux.",
+    "Praktische zerstörungsfreie Prüfung mit Bodenradar und Interpretation der Messsignale."
+  ],
+  "rc-water-carrier": [
+    "Conception et prototypage d’un véhicule de transport radiocommandé imprimé en 3D, dans un cours pratique de fabrication additive.",
+    "Konstruktion und Prototypenbau eines 3D-gedruckten, ferngesteuerten Transportfahrzeugs im Praktikum zur additiven Fertigung."
+  ],
+  "leo-satellite-power": [
+    "Dimensionnement du sous-système électrique d’un satellite : panneaux solaires, stockage et bilan de puissance.",
+    "Auslegung eines Satelliten-Stromversorgungssystems mit Solargenerator, Energiespeicher und Leistungsbilanz."
+  ],
+  "baja-sae-buggy": [
+    "Projet étudiant de véhicule tout-terrain : conception mécanique, suspension et intégration des composants.",
+    "Studentisches Geländefahrzeugprojekt mit mechanischer Konstruktion, Fahrwerk und Komponentenintegration."
+  ]
+}

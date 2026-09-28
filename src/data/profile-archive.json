@@ -1,0 +1,461 @@
+[
+  {
+    "id": "A01_trace_fangeo",
+    "title": "TRACE FanGEO — Requirement-Driven Fan Geometry to Body Force Model Preprocessing",
+    "category": "Experience & research",
+    "kind": "Master's Thesis / End-of-Study Research Internship",
+    "institution": "ISAE-SUPAERO DAEP",
+    "period": "May 2026 – Present",
+    "summary": "Master’s thesis on analytical throughflow, radial equilibrium, blade parameterisation and geometry-derived body-force-model preprocessing. This work does not constitute full 3D RANS or rig validation."
+  },
+  {
+    "id": "A02_lilium_internship",
+    "title": "Lilium eAircraft GmbH — Structural Engineering & Mechanical Design Internship",
+    "category": "Experience & research",
+    "kind": "Industrial Aerospace Internship",
+    "institution": "Lilium eAircraft GmbH, Munich",
+    "period": "April 2024 – November 2024 (8 months)",
+    "summary": "Formulated test requirements for compression, tensile, and insert-pull-out campaigns on composite sandwich panels; designed test fixtures in Siemens NX with ASME/ISO GD&T; executed pre-test nonlinear FEM in ANSYS Workbench; managed drawings in Teamcenter PLM."
+  },
+  {
+    "id": "A03_tum_lilium_research",
+    "title": "TUM × Lilium — Academic research context",
+    "category": "Experience & research",
+    "kind": "Academic Research Collaboration (NDA)",
+    "institution": "Technical University of Munich / Lilium",
+    "period": "2024 – 2025",
+    "summary": "Academic research connected to industrial structural topics. Technical details remain confidential; this is not presented as an awarded thesis."
+  },
+  {
+    "id": "A04_warr_rocketry",
+    "title": "WARR Rocketry — Mechanical Engineer / CFRP Cryogenic Tank Structural FEA",
+    "category": "Experience & research",
+    "kind": "Student Rocketry Engineering Team",
+    "institution": "TUM Scientific Workgroup for Rocketry and Spaceflight (WARR)",
+    "period": "October 2023 – March 2024",
+    "summary": "Evaluated structural performance and linear eigenvalue buckling margins of a CFRP cryogenic propellant tank under combined internal pressure, launch g-loads, and thermal gradients using ANSYS Workbench."
+  },
+  {
+    "id": "A05_feynman_aerospace",
+    "title": "Feynman Aerospace LLP — Aircraft Design Internship",
+    "category": "Experience & research",
+    "kind": "UAV Design Internship",
+    "institution": "Feynman Aerospace LLP, Mumbai",
+    "period": "April 2021 – October 2021 (6 months)",
+    "summary": "Performed low-Re aerodynamic/configuration analysis for an ~2 m fixed-wing UAV using XFLR5 and ANSYS Fluent; modeled parametric airframe in SolidWorks; supported prototype flight testing and aerodynamic iteration."
+  },
+  {
+    "id": "A06_kmml_internship",
+    "title": "The Kerala Minerals and Metals Ltd. (KMML) — Industrial Process Internship",
+    "category": "Experience & research",
+    "kind": "Industrial Plant Internship",
+    "institution": "KMML, Kerala, India",
+    "period": "Dates under review",
+    "summary": "Industrial internship at Kerala Minerals and Metals Ltd.; exposure to process-plant operations and mechanical equipment."
+  },
+  {
+    "id": "B07_btech_thesis_dep",
+    "title": "Distributed Electric Propulsion (DEP) Passenger Aircraft Aerodynamics",
+    "category": "Aerodynamics & propulsion",
+    "kind": "B.Tech Honours Capstone Thesis",
+    "institution": "APJ Abdul Kalam Technological University",
+    "period": "2021 – 2022",
+    "summary": "Compared clean transport-wing baseline against configurations with leading-edge stationary distributed nacelles using steady RANS (k-ω SST) in ANSYS Fluent; analyzed surface pressure distributions, boundary layer development, and wake shedding."
+  },
+  {
+    "id": "B08_vorom_x_v6",
+    "title": "VOROM-X — Reduced-Order Aerodynamic Solver",
+    "category": "Aerodynamics & propulsion",
+    "kind": "Scientific Software / Flight Physics Prototype",
+    "institution": "Independent Research / ISAE-SUPAERO Study",
+    "period": "2025 – 2026",
+    "summary": "Python aerodynamic research framework for wing loading, induced drag, configuration trades and model comparison. High-incidence drag and coupled convergence remain model limitations."
+  },
+  {
+    "id": "B09_apexsim_v09",
+    "title": "ApexSim — CFD Automation & Vehicle Performance",
+    "category": "Aerodynamics & propulsion",
+    "kind": "Motorsport Engineering & CFD Framework",
+    "institution": "Independent Project",
+    "period": "2026",
+    "summary": "Python workflow linking automated Gmsh/SU2 studies, aerodynamic maps and vehicle-performance exploration. Uses polynomial ridge and RBF surrogates with numerical checks; generic vehicle geometry."
+  },
+  {
+    "id": "B10_high_lift_airfoil",
+    "title": "High-Lift Airfoil CFD — HLHLSD4",
+    "category": "Aerodynamics & propulsion",
+    "kind": "Numerical aerodynamics project",
+    "institution": "ISAE-SUPAERO (Advanced Numerical Fluid Mechanics)",
+    "period": "2025",
+    "summary": "Compared Transition-SST RANS and XFOIL at Reynolds number one million; investigated separation and three-level mesh sensitivity. Personal wind-tunnel testing is not claimed."
+  },
+  {
+    "id": "B11_aeroacoustics_fan_noise",
+    "title": "Aeroacoustics Seminar — Tonal Noise in Axial Fan Systems",
+    "category": "Aerodynamics & propulsion",
+    "kind": "Graduate Seminar / Analytical Study",
+    "institution": "ISAE-SUPAERO",
+    "period": "2025",
+    "summary": "Investigated dipole and quadrupole acoustic source generation mechanisms, blade passing frequency (BPF) tonal noise, and wake-stator interaction using acoustic analogies (Lighthill, FW-H)."
+  },
+  {
+    "id": "B12_adv_turbomachinery_coursework",
+    "title": "Advanced Aerodynamics of Turbomachinery Coursework",
+    "category": "Aerodynamics & propulsion",
+    "kind": "Graduate Coursework & Projects",
+    "institution": "ISAE-SUPAERO",
+    "period": "2025 – 2026",
+    "summary": "Cascade aerodynamics, boundary layer loss mechanisms, secondary flows, shock structures in transonic fan blades, and thermodynamic cycle matching."
+  },
+  {
+    "id": "B13_tum_aircraft_design_performance",
+    "title": "Aircraft Design & Performance Coursework at TUM",
+    "category": "Aerodynamics & propulsion",
+    "kind": "Graduate Engineering Curriculum",
+    "institution": "Technical University of Munich",
+    "period": "2023 – 2024",
+    "summary": "Baseline configuration sizing, wing planform selection, engine matching, climb/cruise/turn performance envelopes, payload-range diagrams."
+  },
+  {
+    "id": "B14_tum_rennsporttechnik",
+    "title": "TUM Rennsporttechnik — Race-Car Engineering Focus",
+    "category": "Aerodynamics & propulsion",
+    "kind": "Specialized Engineering Curriculum",
+    "institution": "Technical University of Munich",
+    "period": "2023 – 2024",
+    "summary": "Race-car aerodynamics, ground-effect diffusers, multi-element wings, vehicle dynamics, non-linear tire mechanics, racing telemetry analysis."
+  },
+  {
+    "id": "B15_supersonic_aerodynamics",
+    "title": "Supersonic Aerodynamics (Target Domain Interest)",
+    "category": "Aerodynamics & propulsion",
+    "kind": "Domain Focus",
+    "institution": "Academic / Literature Study",
+    "period": "2024 – 2026",
+    "summary": "Wave drag minimization, supersonic area ruling, shock-expansion theory, oblique shocks, and supersonic inlet aerodynamics."
+  },
+  {
+    "id": "C16_spacecraft_design_power",
+    "title": "Spacecraft Design Fundamentals — Power Subsystem Lead",
+    "category": "Space & systems",
+    "kind": "Systems Engineering Design Project",
+    "institution": "Technical University of Munich (TUM)",
+    "period": "2023",
+    "summary": "Acted as Power Subsystem Lead (Group 10); sized photovoltaic solar array area, battery capacity for orbital eclipse, depth of discharge, and power distribution bus."
+  },
+  {
+    "id": "C17_space_systems_seminar",
+    "title": "Space Systems Seminar",
+    "category": "Space & systems",
+    "kind": "Graduate Seminar",
+    "institution": "Technical University of Munich (TUM)",
+    "period": "2023 – 2024",
+    "summary": "Orbital mechanics, launch vehicle payload fairing acoustics, thermal control systems, satellite payload architectures."
+  },
+  {
+    "id": "C18_spacecraft_propulsion_study",
+    "title": "Spacecraft Propulsion Coursework",
+    "category": "Space & systems",
+    "kind": "Graduate Curriculum",
+    "institution": "Technical University of Munich (TUM)",
+    "period": "2023 – 2024",
+    "summary": "Chemical propulsion (monopropellant/bipropellant), specific impulse, nozzle expansion ratios, electric propulsion (Hall-effect thrusters, gridded ion)."
+  },
+  {
+    "id": "C19_flight_systems_and_control",
+    "title": "Flight Systems & Control Engineering",
+    "category": "Space & systems",
+    "kind": "Graduate Curriculum",
+    "institution": "Technical University of Munich (TUM)",
+    "period": "2023 – 2024",
+    "summary": "State-space modeling, transfer functions, longitudinal/lateral flight dynamics modes (phugoid, short period, Dutch roll), autopilot PID controller synthesis."
+  },
+  {
+    "id": "C20_solar_power_park_systems",
+    "title": "Solar Power Park Systems Engineering Project",
+    "category": "Space & systems",
+    "kind": "Systems Engineering Project",
+    "institution": "Technical University of Munich (TUM)",
+    "period": "2023",
+    "summary": "Requirements traceability, solar irradiance modeling, inverter electrical topology, levelized cost of energy (LCOE) optimization."
+  },
+  {
+    "id": "D21_cfrp_sandwich_testing",
+    "title": "CFRP Sandwich Structure Testing & Load Introduction — Lilium",
+    "category": "Structures & manufacturing",
+    "kind": "Industrial Physical Testing",
+    "institution": "Lilium eAircraft GmbH",
+    "period": "2024",
+    "summary": "Core shear failure modes, facesheet compression, potting compound load distribution, and insert pull-out failure envelope evaluation."
+  },
+  {
+    "id": "D22_cryogenic_tank_fea",
+    "title": "Cryogenic Composite Tank Finite Element Analysis — WARR",
+    "category": "Structures & manufacturing",
+    "kind": "Spacecraft Structural Analysis",
+    "institution": "WARR Rocketry, TUM",
+    "period": "2023 – 2024",
+    "summary": "Finite element modelling and buckling assessment of a composite cryogenic tank in a student rocketry project."
+  },
+  {
+    "id": "D23_gpr_ndt_practical",
+    "title": "Ground-Penetrating Radar (GPR) & Non-Destructive Testing Practical",
+    "category": "Structures & manufacturing",
+    "kind": "Experimental NDT Lab",
+    "institution": "Technical University of Munich (TUM)",
+    "period": "2023 – 2024",
+    "summary": "Operated GSSI Mini XT high-frequency radar antenna; processed radargram B-scans in RADAN 7; detected sub-surface voids and rebar reinforcement."
+  },
+  {
+    "id": "D24_additive_manufacturing_practical",
+    "title": "Additive Manufacturing Practical — FDM Lightweight Prototyping",
+    "category": "Structures & manufacturing",
+    "kind": "Hands-on Manufacturing Lab",
+    "institution": "Technical University of Munich (TUM)",
+    "period": "2023 – 2024",
+    "summary": "Practical coursework in additive manufacturing and prototype production."
+  },
+  {
+    "id": "D25_composite_materials_coursework",
+    "title": "Composite Materials & Structures Coursework",
+    "category": "Structures & manufacturing",
+    "kind": "Advanced Curriculum",
+    "institution": "TUM & ISAE-SUPAERO",
+    "period": "2023 – 2025",
+    "summary": "Classical lamination theory (CLT), ABD matrices, inter-laminar shear stress, delamination mechanics, composite damage tolerance."
+  },
+  {
+    "id": "D26_aerospace_structures_aeroelasticity",
+    "title": "Aerospace Structures & Aeroelasticity Curriculum",
+    "category": "Structures & manufacturing",
+    "kind": "Advanced Curriculum",
+    "institution": "TUM & ISAE-SUPAERO",
+    "period": "2023 – 2026",
+    "summary": "Wing torsion-bending flutter, Theodorsen unsteady aerodynamic functions, structural modal analysis, V-g flutter solution methods."
+  },
+  {
+    "id": "E27_pencil_deeptech",
+    "title": "PENCIL — AFM-SECM Advanced Nanoprobe Commercialisation",
+    "category": "Business, energy & sustainability",
+    "kind": "Deep-Tech Venture Validation",
+    "institution": "Center for Digital Technology & Management (CDTM) / TUM",
+    "period": "2024",
+    "summary": "Techno-economic feasibility, patent landscape, and customer discovery interviews for co-axial AFM-SECM cantilever sensors."
+  },
+  {
+    "id": "E28_6g_business_modeling",
+    "title": "6G Business Modeling & Prototyping",
+    "category": "Business, energy & sustainability",
+    "kind": "Official TUM Coursework (6 ECTS)",
+    "institution": "Technical University of Munich (TUM)",
+    "period": "2024",
+    "summary": "Telecom business modeling, edge computing infrastructure, frequency spectrum allocation, business model canvas prototyping."
+  },
+  {
+    "id": "E29_aviation_and_environment",
+    "title": "Aviation & Environment Coursework",
+    "category": "Business, energy & sustainability",
+    "kind": "Official ISAE Coursework",
+    "institution": "ISAE-SUPAERO",
+    "period": "2025",
+    "summary": "Aviation carbon accounting, contrail cirrus radiative forcing, sustainable aviation fuels (SAF), life-cycle carbon emissions."
+  },
+  {
+    "id": "E30_aeromaps_reporting",
+    "title": "AeroMAPS Tutorial & Aviation Decarbonization Modeling",
+    "category": "Business, energy & sustainability",
+    "kind": "Research Project",
+    "institution": "ISAE-SUPAERO",
+    "period": "2025",
+    "summary": "Used ISAE-SUPAERO's AeroMAPS energy and technology transition model to simulate global fleet renewal and fleet-level fuel-burn trajectories."
+  },
+  {
+    "id": "E31_greener_ground_operations",
+    "title": "Greener Ground Operations Project",
+    "category": "Business, energy & sustainability",
+    "kind": "Sustainability Engineering Project",
+    "institution": "ISAE-SUPAERO",
+    "period": "2025",
+    "summary": "Analyzed electrification of airport ground service equipment (GSE), taxi-in/taxi-out APU emissions, and electrical grid demand."
+  },
+  {
+    "id": "E32_project_management_course",
+    "title": "Project Management — ISAE-SUPAERO",
+    "category": "Business, energy & sustainability",
+    "kind": "Official Coursework",
+    "institution": "ISAE-SUPAERO",
+    "period": "2025",
+    "summary": "Coursework in project planning, work breakdown, scheduling and risk management."
+  },
+  {
+    "id": "E33_international_aviation_law",
+    "title": "International Aviation Law — ISAE-SUPAERO",
+    "category": "Business, energy & sustainability",
+    "kind": "Official Coursework",
+    "institution": "ISAE-SUPAERO",
+    "period": "2025",
+    "summary": "Chicago Convention, ICAO Annexes, EASA CS-25 certification specifications, bilateral air service agreements."
+  },
+  {
+    "id": "E34_systems_engineering_complexity",
+    "title": "Systems Engineering Fundamentals & Complexity Analysis",
+    "category": "Business, energy & sustainability",
+    "kind": "Curriculum",
+    "institution": "TUM & ISAE-SUPAERO",
+    "period": "2023 – 2025",
+    "summary": "V-model system lifecycle, stakeholder requirements validation, interface control documents (ICD), failure hazard analysis (FHA)."
+  },
+  {
+    "id": "E35_refrigeration_and_heat_pumps",
+    "title": "Air Conditioning, Refrigeration & Heat Pumps (5 ECTS)",
+    "category": "Business, energy & sustainability",
+    "kind": "Official TUM Transcript Course",
+    "institution": "Technical University of Munich (TUM)",
+    "period": "2024",
+    "summary": "Vapor-compression cycles, coefficient of performance (COP), eco-friendly refrigerants (R290, CO2), heat exchanger thermal sizing."
+  },
+  {
+    "id": "E36_reaction_thermodynamics",
+    "title": "Reaction Thermodynamics for Energy Systems (5 ECTS)",
+    "category": "Business, energy & sustainability",
+    "kind": "Official TUM Transcript Course",
+    "institution": "Technical University of Munich (TUM)",
+    "period": "2024",
+    "summary": "Chemical equilibrium, flame temperature, combustion kinetics, gas turbine thermal efficiency, exergy analysis."
+  },
+  {
+    "id": "F37_baja_buggy_suspension",
+    "title": "Baja SAE Buggy — Double-Wishbone Suspension & FMEA",
+    "category": "Early engineering & teams",
+    "kind": "Student Competition Vehicle",
+    "institution": "APJ Abdul Kalam Technological University",
+    "period": "2019 – 2021",
+    "summary": "Designed double-wishbone suspension in SolidWorks; conducted FMEA on steering knuckles and control arms; fabricated chassis tubular space frame."
+  },
+  {
+    "id": "F38_meckartans_karting",
+    "title": "Meckartans Go-Kart Engineering Team",
+    "category": "Early engineering & teams",
+    "kind": "Student Motorsport Team",
+    "institution": "APJ Abdul Kalam Technological University",
+    "period": "2018 – 2020",
+    "summary": "Participated in chassis fabrication, hydraulic disc brake setup, rear axle hub alignment, and dynamic track tests."
+  },
+  {
+    "id": "F39_smart_medicine_box",
+    "title": "Smart Medicine Dispenser (IoT & Embedded Systems)",
+    "category": "Early engineering & teams",
+    "kind": "Hardware / Embedded Prototyping",
+    "institution": "Undergraduate Engineering Project",
+    "period": "2019",
+    "summary": "Developed an Arduino-controlled automated pill dispenser with RTC clock scheduling, servo-driven rotary compartments, and LCD alert notifications."
+  },
+  {
+    "id": "F40_cnc_plotter",
+    "title": "Arduino CNC 2D Plotter & Motion Controller",
+    "category": "Early engineering & teams",
+    "kind": "Mechatronics / Digital Fabrication",
+    "institution": "Undergraduate Engineering Project",
+    "period": "2019",
+    "summary": "Constructed dual-axis stepper-driven CNC plotter using repurposed optical drives, A4988 motor drivers, Arduino Uno, and G-code parser."
+  },
+  {
+    "id": "F41_hyperloop_technology_seminar",
+    "title": "Hyperloop Technology Seminar (3 ECTS)",
+    "category": "Early engineering & teams",
+    "kind": "Official TUM Transcript Course",
+    "institution": "Technical University of Munich (TUM)",
+    "period": "2023",
+    "summary": "Reviewed low-pressure tube aerodynamic drag, Kantrowitz limit, axial compressor bypass, and magnetic levitation stability."
+  },
+  {
+    "id": "G42_isnt_coordination",
+    "title": "Indian Society for Non-Destructive Testing (ISNT) Student Coordinator",
+    "category": "Leadership & mobility",
+    "kind": "Professional Society Leadership",
+    "institution": "APJ Abdul Kalam Technological University",
+    "period": "2019 – 2022",
+    "summary": "Organized technical workshops on ultrasonic testing, magnetic particle inspection, radiographic film interpretation, and dye penetrant testing."
+  },
+  {
+    "id": "G43_tum_ndt_engagement",
+    "title": "Non-Destructive Testing Academic Engagement at TUM",
+    "category": "Leadership & mobility",
+    "kind": "Academic Engagement",
+    "institution": "Technical University of Munich (TUM)",
+    "period": "2023 – 2024",
+    "summary": "Participated in university lab demonstrations on acoustic emission, eddy current testing, and ground-penetrating radar."
+  },
+  {
+    "id": "G44_dance_crew_founder_lead",
+    "title": "Collegiate Dance Crew Founder & Artistic Director",
+    "category": "Leadership & mobility",
+    "kind": "Creative Leadership",
+    "institution": "Kerala, India",
+    "period": "2018 – 2022",
+    "summary": "Founded and led a college dance crew, coordinating choreography, rehearsals and team performance."
+  },
+  {
+    "id": "G45_world_of_dance_2019",
+    "title": "World of Dance India — Team participation",
+    "category": "Leadership & mobility",
+    "kind": "National Dance Competition",
+    "institution": "World of Dance Championship Series",
+    "period": "2019",
+    "summary": "Dance team leadership and participation. Competition-stage descriptions vary across the supplied records and are not claimed here."
+  },
+  {
+    "id": "G46_erasmus_mobility",
+    "title": "Erasmus+ International Academic Mobility (Germany to France)",
+    "category": "Leadership & mobility",
+    "kind": "European Mobility Program",
+    "institution": "TUM to ISAE-SUPAERO",
+    "period": "2025 – 2026",
+    "summary": "Selected for international mobility transition from TUM Munich to ISAE-SUPAERO Toulouse, integrating bilingual European aerospace engineering environments."
+  },
+  {
+    "id": "G47_intercultural_encounters",
+    "title": "Intercultural Encounters & Global Competence",
+    "category": "Leadership & mobility",
+    "kind": "Official TUM Certificate Program",
+    "institution": "Technical University of Munich (TUM)",
+    "period": "2023 – 2024",
+    "summary": "Completed official cross-cultural teamwork and international communication modules."
+  },
+  {
+    "id": "G48_french_language_studies",
+    "title": "French as a Foreign Language (Français Langue Étrangère)",
+    "category": "Leadership & mobility",
+    "kind": "Official Language Coursework",
+    "institution": "ISAE-SUPAERO",
+    "period": "2025 – 2026",
+    "summary": "Enrolled in French language instruction at ISAE-SUPAERO; currently A1 elementary and actively advancing spoken/written French."
+  },
+  {
+    "id": "leadership-0",
+    "title": "Secretary & Co-founder of Aerospace Club (Aeromodelling/Nano-sat)",
+    "category": "Leadership & mobility",
+    "kind": "Leadership",
+    "institution": "Student activities",
+    "period": "During university studies",
+    "summary": "Technical society, club or event coordination recorded in the career profile."
+  },
+  {
+    "id": "leadership-1",
+    "title": "Campus Ambassador for ASME & ISNT",
+    "category": "Leadership & mobility",
+    "kind": "Leadership",
+    "institution": "Student activities",
+    "period": "During university studies",
+    "summary": "Technical society, club or event coordination recorded in the career profile."
+  },
+  {
+    "id": "leadership-2",
+    "title": "Event Coordinator for Technical (ADVENT 22) and Cultural (CULTAWAY 22) Fests",
+    "category": "Leadership & mobility",
+    "kind": "Leadership",
+    "institution": "Student activities",
+    "period": "During university studies",
+    "summary": "Technical society, club or event coordination recorded in the career profile."
+  }
+]

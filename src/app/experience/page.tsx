@@ -1,89 +1,86 @@
-"use client";
-
-import { motion } from "framer-motion";
-import profile from "@/data/profile.json";
-import { Briefcase, MapPin, Calendar, Target } from "lucide-react";
-
-export default function ExperiencePage() {
-    return (
-        <div className="container mx-auto px-6 py-24">
-            <header className="mb-32 relative">
-                <div className="mb-10 inline-flex items-center space-x-6 bg-primary/5 border border-primary/20 px-10 py-4 rounded-full">
-                    <Briefcase className="h-6 w-6 text-primary" />
-                    <span className="text-[14px] font-black uppercase tracking-[0.6em] text-primary">
-                        Intel_Logs_Archive
-                    </span>
-                </div>
-
-                <h1 className="font-outfit text-8xl font-black uppercase tracking-tighter md:text-[10rem] mb-12 text-speed text-white drop-shadow-2xl">
-                    INDUSTRIAL <span className="text-primary glow-red">PHASES</span>.
-                </h1>
-
-                <p className="max-w-4xl text-3xl font-black opacity-40 uppercase tracking-tight leading-tight">
-                    Bridging the absolute gap between academic research and high-stakes industrial deployment.
-                </p>
-            </header>
-
-            <div className="space-y-24">
-                {profile.experience.map((exp, idx) => (
-                    <motion.section
-                        key={idx}
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, delay: idx * 0.1 }}
-                        viewport={{ once: true }}
-                        className="group relative grid gap-16 lg:grid-cols-12"
-                    >
-                        {/* Timeline Sidebar with High Impact */}
-                        <div className="lg:col-span-3 border-l-4 border-primary pl-10 h-max sticky top-48">
-                            <div className="flex items-center gap-4 text-2xl font-black text-primary mb-2">
-                                <Calendar className="h-6 w-6" />
-                                {exp.period}
-                            </div>
-                            <div className="flex items-center gap-3 text-xl font-bold text-white/30">
-                                <MapPin className="h-4 w-4" />
-                                {exp.location}
-                            </div>
-                        </div>
-
-                        {/* Content Card with HUD Overlay */}
-                        <div className="glass-panel hud-corner relative rounded-[4rem] p-16 lg:col-span-9 transition-all hover:bg-white/[0.05] border-2 border-white/10">
-                            <div className="mb-12 flex flex-wrap items-end justify-between gap-8 border-b border-white/5 pb-10">
-                                <div>
-                                    <h3 className="text-5xl font-black text-white group-hover:text-primary transition-all tracking-tighter mb-4">
-                                        {exp.role}
-                                    </h3>
-                                    <div className="text-3xl font-black text-white/40 uppercase tracking-tight">
-                                        {exp.company}
-                                    </div>
-                                </div>
-                                <div className="flex flex-wrap gap-4">
-                                    {exp.tools.map((tool) => (
-                                        <span
-                                            key={tool}
-                                            className="rounded-2xl bg-white/5 px-6 py-3 text-[12px] font-black uppercase tracking-[0.2em] text-white/60 border border-white/10 group-hover:border-primary/40 group-hover:text-primary transition-all"
-                                        >
-                                            {tool}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-                            <p className="text-2xl font-bold text-white leading-relaxed text-pretty">
-                                {exp.description}
-                            </p>
-
-                            {/* HUD Background Element */}
-                            <div className="absolute top-10 right-10 opacity-[0.03] grayscale pointer-events-none group-hover:opacity-10 transition-all duration-1000 rotate-12">
-                                <Target className="h-64 w-64 text-primary" />
-                            </div>
-                        </div>
-                    </motion.section>
-                ))}
+import Link from "next/link";
+const entries = [
+  {
+    name: "Lilium eAircraft GmbH",
+    role: "Mechanical Design Engineer Intern",
+    date: "April–November 2024",
+    place: "Munich, Germany",
+    type: "Industry",
+    text: "Worked on mechanical test hardware for composite sandwich structures: test requirements, fixture design, drawing preparation and physical test support.",
+    points: [
+      "Designed and documented hardware with Siemens NX and GD&T.",
+      "Used pre-test finite element analysis to examine fixture behaviour and load introduction.",
+      "Contributed to compression and insert-pull-out testing and technical reporting.",
+    ],
+    link: "lilium-sandwich-structures",
+  },
+  {
+    name: "Feynman Aerospace LLP",
+    role: "Aircraft Design Intern",
+    date: "April–October 2021",
+    place: "India",
+    type: "Industry",
+    text: "Supported the development of a fixed-wing UAV through aerodynamic analysis, airframe CAD and prototype flight-test support.",
+    points: [
+      "Used XFLR5 and ANSYS Fluent for low-Reynolds-number aerodynamic studies.",
+      "Developed airframe geometry in SolidWorks.",
+      "Connected analysis and design work with prototype development.",
+    ],
+    link: "feynman-fixed-wing-uav",
+  },
+  {
+    name: "WARR Rocketry · TUM",
+    role: "Student team / Structural analysis",
+    date: "2023–2024",
+    place: "Munich, Germany",
+    type: "Student engineering",
+    text: "Contributed to composite cryogenic tank structural analysis in a student rocketry setting.",
+    points: [
+      "Explored finite element modelling and buckling assessment.",
+      "Worked within the practical constraints of a multidisciplinary student team.",
+    ],
+    link: "warr-cryotank-fea",
+  },
+];
+export default function Experience() {
+  return (
+    <div className="shell section">
+      <p className="eyebrow">Experience / Industry & student engineering</p>
+      <h1 className="page-title">
+        Engineering is
+        <br />
+        <em>a team effort.</em>
+      </h1>
+      <p className="section-description">
+        From aerospace test hardware to UAV design: the places where analysis
+        meets practical constraints.
+      </p>
+      <div className="career-timeline">
+        {entries.map((e, i) => (
+          <article key={e.name}>
+            <div className="timeline-meta">
+              <span className="eyebrow">
+                0{i + 1} / {e.type}
+              </span>
+              <p>{e.date}</p>
+              <small>{e.place}</small>
             </div>
-
-            <footer className="mt-64 text-center opacity-10">
-                <div className="text-[12px] font-black tracking-[1.5em] uppercase">End of Operational Intel</div>
-            </footer>
-        </div>
-    );
+            <div className="timeline-content">
+              <h2>{e.name}</h2>
+              <h3>{e.role}</h3>
+              <p>{e.text}</p>
+              <ul>
+                {e.points.map((p) => (
+                  <li key={p}>{p}</li>
+                ))}
+              </ul>
+              <Link href={`/projects/${e.link}`} className="text-link">
+                Related work ↗
+              </Link>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
 }

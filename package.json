@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "start": "node scripts/preview.mjs",
+    "lint": "eslint",
+    "preview": "node scripts/preview.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

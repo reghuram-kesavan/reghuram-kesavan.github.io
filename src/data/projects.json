@@ -1,314 +1,220 @@
 [
-    {
-        "id": "vorom-x-aerodynamics",
-        "title": "VOROM-X: 3D Vortex Lattice & Trefftz Induced Drag Simulator",
-        "role": "Scientific Software & Aerodynamic Developer",
-        "tags": [
-            "Aerodynamics",
-            "Flight Physics",
-            "Python",
-            "Tool Development"
-        ],
-        "tools": [
-            "Python",
-            "NumPy",
-            "SciPy",
-            "Matplotlib",
-            "VLM",
-            "Trefftz Method",
-            "Git"
-        ],
-        "impact": "Engineered an open-source 3D Vortex Lattice Method (VLM) research prototype with Trefftz-plane induced drag integration, automated stability derivatives, and longitudinal trim benchmarking (196+1 tests).",
-        "summary": "High-efficiency, object-oriented 3D potential flow research tool for preliminary aircraft aerodynamic design, planform optimization (sweep, dihedral, twist/washout), and flight-physics trade studies.",
-        "problem": "Early-stage aircraft configuration trades require rapid evaluation of induced drag, spanwise circulation, and stability derivatives without the prohibitive computational cost of 3D RANS.",
-        "approach": "Developed a 3D horseshoe vortex lattice solver with Trefftz-plane momentum-deficit integration for rigorous induced drag estimation, coupled with automated stability analysis.",
-        "methods": "Biot-Savart induction kernel; Trefftz-plane wake integration; automated sweep and washout parametric trade studies; longitudinal trim and static margin computation; comprehensive unit testing.",
-        "validation": "Benchmarked against published wind-tunnel experimental polar datasets and XFLR5 across multiple planar and non-planar wing geometries to define low-order operational bounds.",
-        "results": "Achieved sub-second aerodynamic polar evaluations with verified lift-curve slope and induced drag prediction; enabled multi-parameter design space exploration for swept and tailless configurations.",
-        "learnings": "Deep theoretical and numerical mastery of potential flow methods, wake roll-up limits, and automated flight-physics derivation in scientific Python.",
-        "next_steps": "Integration of unsteady vortex lattice method (UVLM) and aeroelastic beam coupling."
-    },
-    {
-        "id": "high-lift-aerodynamics",
-        "title": "High-Lift Aerodynamics: Wind-Tunnel Testing & Transition-SST RANS",
-        "role": "ISAE-SUPAERO Research Project",
-        "tags": [
-            "Aerodynamics",
-            "CFD",
-            "Wind Tunnel",
-            "Testing"
-        ],
-        "tools": [
-            "ANSYS Fluent",
-            "Wind Tunnel",
-            "XFOIL",
-            "Structured Meshing",
-            "Transition-SST"
-        ],
-        "impact": "Executed experimental wind-tunnel testing on the HLHLSD4 high-lift airfoil at Re = 1.0×10⁶; correlated Transition-SST RANS across multi-block grids (y⁺ < 1; 11k, 23k, 40k cells) with ~0.15% CL and ~2% CD convergence.",
-        "summary": "Experimental and numerical study of a high-lift airfoil section at Re = 1×10⁶, investigating boundary-layer transition, separation progression, and stall characteristics.",
-        "problem": "Predicting the stall boundary and maximum lift coefficient of high-lift sections requires resolving both natural/bypass boundary-layer transition and separation bubbles.",
-        "approach": "Combined low-speed wind-tunnel aerodynamic testing with high-fidelity Transition-SST RANS simulations and XFOIL viscous-inviscid interaction modeling.",
-        "methods": "Built structured multi-block C-grids with near-wall refinement (y⁺ < 1); executed grid sensitivity analysis across three mesh densities; extracted computed suction-side pressure distributions and skin friction coefficient profiles.",
-        "validation": "Compared computed pressure and skin-friction trends against XFOIL and experimental wind-tunnel polar data to evaluate separation onset and model limitations.",
-        "results": "Demonstrated tight grid convergence at 10° angle of attack (~0.15% medium-to-fine CL difference, ~2% CD difference) and characterized laminar separation bubble behavior.",
-        "learnings": "Practical expertise in low-speed wind-tunnel testing, structured boundary-layer meshing, and transition-sensitive turbulence modeling.",
-        "next_steps": "3D swept wing and multi-element flap configuration analysis."
-    },
-    {
-        "id": "apexsim-aerodynamics",
-        "title": "ApexSim: Aerodynamic Methods & Scientific Workflow Automation",
-        "role": "Scientific Software & Methods Developer",
-        "tags": [
-            "CFD",
-            "Automation",
-            "Python",
-            "Surrogate Modelling"
-        ],
-        "tools": [
-            "Python",
-            "SU2",
-            "Scikit-Learn",
-            "Kriging",
-            "Git",
-            "Linux"
-        ],
-        "impact": "Engineered modular Python pipelines for automated CFD execution and surrogate modeling (69/69 tests); established numerical evidence gates with domain boundary remediation (ΔCL: 7.22% → 1.52%, ΔCD: 4.21% → 2.93%).",
-        "summary": "An automated engineering methods framework designed to streamline high-throughput CFD parameter sweeps, enforce numerical verification gates, and generate continuous aerodynamic databases.",
-        "problem": "Manual CFD execution is prone to human error, lack of mesh convergence tracking, and unverified boundary condition sensitivities during large design of experiments (DOE).",
-        "approach": "Developed automated execution scripts that interface with open-source RANS solvers (SU2), parse residuals, enforce convergence thresholds, and train surrogate models on validated datasets.",
-        "methods": "Automated mesh perturbation and boundary condition generation; spatial sensitivity analysis; polynomial and Kriging surrogate response surface fitting; automated test suite.",
-        "validation": "Rigorous verification gating where production DOE runs remain locked until spatial domain sensitivity falls below target engineering thresholds.",
-        "results": "Reduced domain sensitivity from 7.22% to 1.52% on CL; enabled rapid query of multi-dimensional aerodynamic performance databases for downstream vehicle dynamics.",
-        "learnings": "Advanced numerical verification discipline, surrogate model uncertainty quantification, and scientific computing automation.",
-        "next_steps": "Active subspace dimension reduction for high-dimensional design spaces."
-    },
-    {
-        "id": "trace-fangeo",
-        "title": "TRACE FanGEO: Requirement-Driven Turbomachinery Design Workflow",
-        "role": "Master's Thesis Research @ ISAE-SUPAERO DAEP",
-        "tags": [
-            "Turbomachinery",
-            "Python",
-            "Research",
-            "Aerodynamics"
-        ],
-        "tools": [
-            "Python",
-            "B-splines",
-            "Throughflow",
-            "Radial Equilibrium",
-            "CAD Automation"
-        ],
-        "impact": "Architected a requirement-driven fan geometry and throughflow preprocessor spanning 41 spanwise sections, automating velocity-triangle closure and 3D blade parameterisation.",
-        "summary": "ISAE-SUPAERO Master's thesis developing an automated toolchain connecting cycle thermodynamic requirements to 3D fan blade geometry and Body Force Model (BFM) aerodynamic source terms.",
-        "problem": "Bridging the gap between 1D thermodynamic cycle requirements and 3D aerodynamic blade geometry is traditionally iterative, manual, and prone to CAD interface inconsistencies.",
-        "approach": "Implemented a semi-analytical throughflow solver based on radial equilibrium and spanwise work distribution Δ(rCθ), coupled to parametric B-spline blade generation.",
-        "methods": "Radial equilibrium integration; velocity triangle closure; flow-to-metal angle deviation modeling; automated stagger, camber, and thickness distribution across 41 spanwise sections; interface consistency verification.",
-        "validation": "Verified geometric closure and throughflow work conservation against baseline fan stage specifications.",
-        "results": "Automated end-to-end blade generation from thermodynamic targets, resolving upstream chord/stagger interface inconsistencies at source.",
-        "learnings": "Deep understanding of turbomachinery gas dynamics, throughflow methods, and automated geometric parameterisation.",
-        "next_steps": "Integration with 3D RANS and Body Force Modeling for boundary-layer ingestion fans."
-    },
-    {
-        "id": "lilium-sandwich-structures",
-        "title": "Structural Test Engineering & Hardware Design for eVTOL",
-        "role": "Mechanical Design Engineer Intern @ Lilium eAircraft",
-        "tags": [
-            "Testing",
-            "FEA",
-            "Mechanical Design",
-            "Aerospace"
-        ],
-        "tools": [
-            "Siemens NX",
-            "ASME Y14.5 GD&T",
-            "ANSYS Workbench",
-            "Teamcenter PLM",
-            "UTM"
-        ],
-        "impact": "Defined structural test requirements and designed custom test fixtures and support hardware for composite sandwich panels in Siemens NX with ASME Y14.5 GD&T; executed pre-test nonlinear FEA in ANSYS.",
-        "summary": "Professional aerospace engineering internship within Lilium's mechanical testing division, developing custom test fixtures, planning test matrices, and running pre-test structural simulations.",
-        "problem": "Ensuring structural integrity and predictable load transfer across composite sandwich panels and insert joints under severe operational and certification flight loads.",
-        "approach": "Combined detailed fixture design in Siemens NX with pre-test nonlinear finite element analysis to ensure proper boundary condition replication on test benches.",
-        "methods": "CAD modeling and drawing preparation under ASME Y14.5 GD&T; nonlinear pre-test FEM in ANSYS Workbench to predict stress concentrations and fixture deflection; configuration management in Teamcenter.",
-        "validation": "Interface fit checks and stiffness verification against physical test bench interfaces.",
-        "results": "Delivered fully documented fixture packages and test requirement matrices, supporting reliable structural characterization of composite joints.",
-        "learnings": "Industrial aerospace engineering standards, PDM release workflows, GD&T application, and physical testing interfaces.",
-        "next_steps": "Dynamic fatigue test correlation and environmental degradation testing."
-    },
-    {
-        "id": "feynman-fixed-wing-uav",
-        "title": "Fixed-Wing UAV Aerodynamics & Prototype Flight Testing",
-        "role": "Aircraft Design Intern @ Feynman Aerospace",
-        "tags": [
-            "Aerodynamics",
-            "Aircraft Design",
-            "Flight Test",
-            "CFD"
-        ],
-        "tools": [
-            "XFLR5",
-            "ANSYS Fluent",
-            "SolidWorks",
-            "Low-Re Aero",
-            "Flight Testing"
-        ],
-        "impact": "Conducted low-Reynolds aerodynamic and stability analysis for an ~2 m fixed-wing UAV using XFLR5 and Fluent; designed 3D airframe geometry in SolidWorks and supported prototype flight testing.",
-        "summary": "Aerospace design internship focusing on aerodynamic optimization, configuration layout, and flight-test support for a medium-scale fixed-wing autonomous aircraft.",
-        "problem": "Optimizing the cruise efficiency, stall behavior, and longitudinal stability of an unmanned aircraft operating in the low-Reynolds-number regime.",
-        "approach": "Iterative aerodynamic design using panel codes and RANS CFD, followed by 3D CAD packaging and prototype flight-test support.",
-        "methods": "Low-Re airfoil selection and polar calculation in XFLR5; 3D wing-body RANS simulation in ANSYS Fluent; 3D surface modeling and structural packaging in SolidWorks.",
-        "validation": "Benchmarked calculated polars against empirical low-Re data; validated trim and handling through prototype flight testing.",
-        "results": "Established aerodynamic databases and control surface requirements; iterated airframe geometry based on flight-test observation.",
-        "learnings": "Hands-on experience in fixed-wing aircraft design synthesis, low-Re aerodynamic physics, and rapid flight-test iteration.",
-        "next_steps": "Automated flight data acquisition and onboard telemetry synchronization."
-    },
-    {
-        "id": "dep-aircraft-aero",
-        "title": "Aerodynamics of Passenger Aircraft with Distributed Electric Propulsion (DEP)",
-        "role": "B.Tech Honours Thesis Researcher",
-        "tags": [
-            "Aerodynamics",
-            "Propulsion",
-            "CFD",
-            "Research"
-        ],
-        "tools": [
-            "ANSYS Fluent",
-            "HyperMesh",
-            "SolidWorks",
-            "RANS"
-        ],
-        "impact": "Investigated aerodynamic interaction between a transport-aircraft wing and simplified stationary nacelle installations using steady RANS within a 4-engineer team.",
-        "summary": "Undergraduate honours thesis investigating the aerodynamic trade-offs and surface flow fields of a transport-aircraft wing integrated with distributed propulsor nacelles.",
-        "problem": "Integrating multiple propulsors along the wing span alters the local pressure field and boundary-layer development, impacting clean-wing cruise efficiency.",
-        "approach": "Modeled baseline and nacelle-installed transport wing geometries to systematically map pressure gradients, velocity profiles, and regional lift-to-drag trade-offs.",
-        "methods": "Clean-wing and installed CAD generation in SolidWorks; high-density volume meshing in HyperMesh; steady-state RANS simulations in ANSYS Fluent; post-processing of boundary-layer velocity slices.",
-        "validation": "Verified clean-wing aerodynamic polars against standard transport reference data; isolated installation effects through comparative flowfield subtraction.",
-        "results": "Quantified chordwise flow acceleration, surface pressure distortion, and wake-interaction zones, identifying optimal spanwise spacing considerations.",
-        "learnings": "Foundational grounding in 3D CFD meshing, boundary-layer physics, and propulsion-airframe integration fundamentals.",
-        "next_steps": "Full actuator disk or rotating propeller CFD modeling to capture slipstream swirl."
-    },
-    {
-        "id": "warr-cryotank-fea",
-        "title": "Cryogenic Propellant Tank Structural FEA & Buckling Analysis",
-        "role": "Mechanical / Structural Team Member @ WARR Rocketry TUM",
-        "tags": [
-            "FEA",
-            "Structures",
-            "Composites",
-            "Aerospace"
-        ],
-        "tools": [
-            "ANSYS",
-            "CAD",
-            "CFRP Composites",
-            "Buckling Analysis"
-        ],
-        "impact": "Analyzed structural performance and buckling margins of a CFRP cryogenic propellant tank for student sounding rockets under combined pressure and axial launch loads.",
-        "summary": "Structural finite element analysis and laminate optimization for lightweight carbon-fiber cryogenic propellant tanks operating under extreme pressure and thermal gradients.",
-        "problem": "Cryogenic composite tanks face high internal pressures and risk thin-wall buckling under launch acceleration and bending moments.",
-        "approach": "Developed finite element models incorporating orthotropic composite laminate properties, cryogenic temperature derating, and internal pressurization.",
-        "methods": "Composite laminate lay-up definition; linear eigenvalue buckling analysis; stress concentration evaluation around fluid ports and skirt interfaces.",
-        "validation": "Compared analytical thin-walled cylinder pressure formulas with numerical stress and buckling eigenvalues.",
-        "results": "Identified critical buckling modes and defined local laminate reinforcement plies to ensure positive structural margins.",
-        "learnings": "Composite laminate analysis, cryogenic pressure vessel behavior, and structural buckling assessment.",
-        "next_steps": "Progressive failure analysis and manufacturing defect sensitivity."
-    },
-    {
-        "id": "gpr-defect-mapping",
-        "title": "Subsurface Defect Mapping Using GPR",
-        "role": "NDT Researcher",
-        "tags": [
-            "Testing",
-            "Research",
-            "Automation"
-        ],
-        "tools": [
-            "GPR (GSSI Scan Mini)",
-            "RADAN 7"
-        ],
-        "impact": "Detected and sized ~40cm subsurface foam defects in concrete with high accuracy using Ground Penetrating Radar and signal processing.",
-        "summary": "Executed non-destructive inspection of concrete structures to map subsurface defects, calibrating dielectric properties and generating B- and C-scan profiles.",
-        "problem": "Detecting internal flaws in thick structures without destructive access.",
-        "approach": "Use GPR for high-frequency electromagnetic wave reflection analysis.",
-        "methods": "Calibration via backwall referencing; data collection across 64 scan paths; signal processing in RADAN 7.",
-        "validation": "Verification of defect size and depth using Time-of-Flight (TOF) and permittivity calculations.",
-        "results": "Successfully mapped a 40cm foam defect at 5cm depth; analyzed system accuracy and limitations.",
-        "learnings": "Experience with GPR hardware and signal processing software; understanding of wave propagation in dielectric media.",
-        "next_steps": "Integration of automated robotic scanning for larger surfaces."
-    },
-    {
-        "id": "rc-water-carrier",
-        "title": "Optimized Additive Manufacturing: RC Transport Vehicle",
-        "role": "TUM Additive Manufacturing Lab",
-        "tags": [
-            "Manufacturing",
-            "Testing",
-            "Automotive"
-        ],
-        "tools": [
-            "Siemens NX",
-            "PrusaSlicer",
-            "FDM"
-        ],
-        "impact": "Won top place for a 3D-printed RC car capable of transporting a full water bottle; followed by an exclusive BMW factory visit.",
-        "summary": "High-performance functional prototyping focusing on weight optimization and load-bearing capacity using FDM printing.",
-        "problem": "Carry a 500g payload on a lightweight 3D-printed chassis.",
-        "approach": "Topology optimization and functional integration of wheels and chassis.",
-        "methods": "NX-based design; material property testing; iterative prototyping.",
-        "validation": "Track testing under load.",
-        "results": "Secured top placement in group challenge.",
-        "learnings": "Design for Additive Manufacturing (DfAM); load-path optimization.",
-        "next_steps": "Integration of sensors for autonomous navigation."
-    },
-    {
-        "id": "leo-satellite-power",
-        "title": "Spacecraft Power Subsystem Architecture",
-        "role": "Systems Engineer",
-        "tags": [
-            "Systems",
-            "Research",
-            "Aerospace"
-        ],
-        "tools": [
-            "MATLAB",
-            "LaTeX",
-            "Sparkwing",
-            "GomSpace"
-        ],
-        "impact": "Architected the end-to-end power system for a LEO debris-tracking satellite, including orbital energy balance and hardware sizing.",
-        "summary": "Designed generation, storage, and distribution systems for an AI-based LEO mission, selecting mission-critical hardware and performing energy balance modeling.",
-        "problem": "Ensure continuous power supply for high-demand AI processing on a limited LEO cube-sat platform.",
-        "approach": "System-level modeling of generation vs consumption throughout the orbital cycle.",
-        "methods": "Orbital mechanics for solar flux calculation; component selection (EaglePicher batteries, Sparkwing arrays).",
-        "validation": "Worse-case scenario analysis (eclipse duration, peak load).",
-        "results": "Defined a robust 60W power bus with 20% margin for all mission phases.",
-        "learnings": "Space hardware standards and orbital energy budget workflows.",
-        "next_steps": "Integration of thermal management constraints into the power model."
-    },
-    {
-        "id": "baja-sae-buggy",
-        "title": "Baja SAE ATV Design & Integration",
-        "role": "Mechanical Designer",
-        "tags": [
-            "Manufacturing",
-            "Testing",
-            "Automotive"
-        ],
-        "tools": [
-            "SolidWorks",
-            "Manual Machining"
-        ],
-        "impact": "Engineered and assembled a Baja buggy frame with double-wishbone suspension, successfully validated against performance benchmarks.",
-        "summary": "Designed and fabricated core subsystems for a high-performance off-road vehicle, focusing on structural integrity and suspension geometry.",
-        "problem": "Develop a lightweight yet durable chassis for extreme off-road competition.",
-        "approach": "Iterative design focusing on occupant safety and vehicle dynamics.",
-        "methods": "Chassis modeling; suspension kinematics optimization; manual jig assembly and welding support.",
-        "validation": "Structural validation through stress testing and track performance.",
-        "results": "Completed vehicle integration with successful endurance testing.",
-        "learnings": "Practical manufacturing skills; suspension geometry; team-based engineering.",
-        "next_steps": "Weight reduction through carbon-fiber body panels."
-    }
+  {
+    "id": "vorom-x-aerodynamics",
+    "title": "VOROM-X — Reduced-Order Aerodynamic Solver",
+    "role": "Scientific Software & Aerodynamic Developer",
+    "tags": ["Aerodynamics", "Flight Physics", "Python", "Tool Development"],
+    "tools": [
+      "Python",
+      "NumPy",
+      "SciPy",
+      "Matplotlib",
+      "VLM",
+      "Trefftz Method",
+      "Git"
+    ],
+    "impact": "Developed a Python research framework for wing loading, induced drag and configuration trade studies; applied it to a blended-wing-body design study.",
+    "summary": "High-efficiency, object-oriented 3D potential flow research tool for preliminary aircraft aerodynamic design, planform optimization (sweep, dihedral, twist/washout), and flight-physics trade studies.",
+    "problem": "Early-stage aircraft configuration trades require rapid evaluation of induced drag, spanwise circulation, and stability derivatives without the prohibitive computational cost of 3D RANS.",
+    "approach": "Developed a 3D horseshoe vortex lattice solver with Trefftz-plane momentum-deficit integration for rigorous induced drag estimation, coupled with automated stability analysis.",
+    "methods": "Biot-Savart induction kernel; Trefftz-plane wake integration; automated sweep and washout parametric trade studies; longitudinal trim and static margin computation; comprehensive unit testing.",
+    "validation": "Compared aerodynamic trends with published experimental data and XFLR5. Agreement depends on the operating condition; high-incidence drag and nonlinear coupled convergence remain important model limitations.",
+    "results": "Explored sweep and washout trades in a tailless blended-wing-body study, including a 20° sweep / −3° washout configuration. This is a research application, not flight validation.",
+    "learnings": "Deep theoretical and numerical mastery of potential flow methods, wake roll-up limits, and automated flight-physics derivation in scientific Python.",
+    "next_steps": "Integration of unsteady vortex lattice method (UVLM) and aeroelastic beam coupling."
+  },
+  {
+    "id": "high-lift-aerodynamics",
+    "title": "High-Lift Aerodynamics — Transition-SST RANS & XFOIL",
+    "role": "ISAE-SUPAERO Research Project",
+    "tags": ["Aerodynamics", "CFD", "Research"],
+    "tools": ["ANSYS Fluent", "XFOIL", "Structured meshing"],
+    "impact": "Compared transition-sensitive RANS and XFOIL predictions for the HLHLSD4 airfoil at Re = 1 million; assessed separation behaviour and mesh sensitivity.",
+    "summary": "A joint numerical fluid mechanics project at ISAE-SUPAERO investigating high-lift airfoil behaviour through RANS CFD and XFOIL.",
+    "problem": "Predicting the stall boundary and maximum lift coefficient of high-lift sections requires resolving both natural/bypass boundary-layer transition and separation bubbles.",
+    "approach": "Compared Transition-SST RANS solutions with XFOIL, examining pressure, skin friction and separation across operating conditions.",
+    "methods": "Built structured multi-block C-grids with near-wall refinement (y⁺ < 1); executed grid sensitivity analysis across three mesh densities; extracted computed suction-side pressure distributions and skin friction coefficient profiles.",
+    "validation": "At 10° incidence, the reported medium-to-fine differences were approximately 0.15% in lift and 2% in drag. These are mesh-sensitivity results, not experimental accuracy; an asymptotic convergence regime was not strictly established.",
+    "results": "Examined separation and its upstream migration with increasing incidence. Used pressure and skin-friction distributions to investigate differences between the modelling approaches.",
+    "learnings": "Transition-sensitive modelling, structured boundary-layer meshing and interpretation of model disagreement.",
+    "next_steps": "3D swept wing and multi-element flap configuration analysis."
+  },
+  {
+    "id": "apexsim-aerodynamics",
+    "title": "ApexSim — CFD Workflow & Vehicle Performance",
+    "role": "Scientific Software & Methods Developer",
+    "tags": ["CFD", "Automation", "Python", "Surrogate Modelling"],
+    "tools": ["Python", "SU2", "Gmsh", "Ridge / RBF surrogates", "Git"],
+    "impact": "Developed a Python workflow connecting aerodynamic maps, automated CFD studies and vehicle-performance exploration.",
+    "summary": "An automated engineering methods framework designed to streamline high-throughput CFD parameter sweeps, enforce numerical verification gates, and generate continuous aerodynamic databases.",
+    "problem": "Manual CFD execution is prone to human error, lack of mesh convergence tracking, and unverified boundary condition sensitivities during large design of experiments (DOE).",
+    "approach": "Developed automated execution scripts that interface with open-source RANS solvers (SU2), parse residuals, enforce convergence thresholds, and train surrogate models on validated datasets.",
+    "methods": "CFD workflow automation, domain-sensitivity assessment, force-stationarity checks, and polynomial ridge / RBF surrogate modelling.",
+    "validation": "The project record describes regression checks and domain-sensitivity gates. These are numerical workflow checks, not correlation with race-track measurements.",
+    "results": "Established a workflow for investigating domain sensitivity before accepting aerodynamic maps for downstream studies.",
+    "learnings": "Numerical verification, reproducible CFD automation and the limitations of surrogate models.",
+    "next_steps": "Active subspace dimension reduction for high-dimensional design spaces."
+  },
+  {
+    "id": "trace-fangeo",
+    "title": "TRACE FanGEO — Fan Geometry to BFM Preprocessing",
+    "role": "Master's Thesis Research @ ISAE-SUPAERO DAEP",
+    "tags": ["Turbomachinery", "Python", "Research", "Aerodynamics"],
+    "tools": [
+      "Python",
+      "B-splines",
+      "Throughflow",
+      "Radial Equilibrium",
+      "CAD Automation"
+    ],
+    "impact": "Developing a requirement-driven chain from fan duty and throughflow to blade geometry, surface normals and metal-blockage fields.",
+    "summary": "Current master’s thesis at ISAE-SUPAERO, DAEP: Requirement-Driven Fan Geometry to Body Force Model Preprocessing.",
+    "problem": "Bridging the gap between 1D thermodynamic cycle requirements and 3D aerodynamic blade geometry is traditionally iterative, manual, and prone to CAD interface inconsistencies.",
+    "approach": "Implemented a semi-analytical throughflow solver based on radial equilibrium and spanwise work distribution Δ(rCθ), coupled to parametric B-spline blade generation.",
+    "methods": "Radial equilibrium integration; velocity triangle closure; flow-to-metal angle deviation modeling; automated stagger, camber, and thickness distribution across 41 spanwise sections; interface consistency verification.",
+    "validation": "Geometric and numerical checks examine reconstruction, surface derivatives, normals and interface consistency. Full downstream CFD and experimental fan validation are separate stages.",
+    "results": "Connected throughflow and geometry generation while identifying chord/stagger interface inconsistencies. Outputs support downstream body-force modelling; they do not establish a fully validated fan design.",
+    "learnings": "Deep understanding of turbomachinery gas dynamics, throughflow methods, and automated geometric parameterisation.",
+    "next_steps": "Gated downstream solver coupling and validation."
+  },
+  {
+    "id": "lilium-sandwich-structures",
+    "title": "Structural Test Engineering & Hardware Design for eVTOL",
+    "role": "Mechanical Design Engineer Intern @ Lilium eAircraft",
+    "tags": ["Testing", "FEA", "Mechanical Design", "Aerospace"],
+    "tools": [
+      "Siemens NX",
+      "ASME Y14.5 GD&T",
+      "ANSYS Workbench",
+      "Teamcenter PLM",
+      "UTM"
+    ],
+    "impact": "Defined structural test requirements and designed custom test fixtures and support hardware for composite sandwich panels in Siemens NX with ASME Y14.5 GD&T; executed pre-test nonlinear FEA in ANSYS.",
+    "summary": "Professional aerospace engineering internship within Lilium's mechanical testing division, developing custom test fixtures, planning test matrices, and running pre-test structural simulations.",
+    "problem": "Ensuring structural integrity and predictable load transfer across composite sandwich panels and insert joints under severe operational and certification flight loads.",
+    "approach": "Combined detailed fixture design in Siemens NX with pre-test nonlinear finite element analysis to ensure proper boundary condition replication on test benches.",
+    "methods": "CAD modeling and drawing preparation under ASME Y14.5 GD&T; nonlinear pre-test FEM in ANSYS Workbench to predict stress concentrations and fixture deflection; configuration management in Teamcenter.",
+    "validation": "Interface fit checks and stiffness verification against physical test bench interfaces.",
+    "results": "Delivered fully documented fixture packages and test requirement matrices, supporting reliable structural characterization of composite joints.",
+    "learnings": "Industrial aerospace engineering standards, PDM release workflows, GD&T application, and physical testing interfaces.",
+    "next_steps": "Dynamic fatigue test correlation and environmental degradation testing."
+  },
+  {
+    "id": "feynman-fixed-wing-uav",
+    "title": "Fixed-Wing UAV Aerodynamics & Prototype Flight Testing",
+    "role": "Aircraft Design Intern @ Feynman Aerospace",
+    "tags": ["Aerodynamics", "Aircraft Design", "Flight Test", "CFD"],
+    "tools": [
+      "XFLR5",
+      "ANSYS Fluent",
+      "SolidWorks",
+      "Low-Re Aero",
+      "Flight Testing"
+    ],
+    "impact": "Conducted low-Reynolds aerodynamic and stability analysis for an ~2 m fixed-wing UAV using XFLR5 and Fluent; designed 3D airframe geometry in SolidWorks and supported prototype flight testing.",
+    "summary": "Aerospace design internship focusing on aerodynamic optimization, configuration layout, and flight-test support for a medium-scale fixed-wing autonomous aircraft.",
+    "problem": "Optimizing the cruise efficiency, stall behavior, and longitudinal stability of an unmanned aircraft operating in the low-Reynolds-number regime.",
+    "approach": "Iterative aerodynamic design using panel codes and RANS CFD, followed by 3D CAD packaging and prototype flight-test support.",
+    "methods": "Low-Re airfoil selection and polar calculation in XFLR5; 3D wing-body RANS simulation in ANSYS Fluent; 3D surface modeling and structural packaging in SolidWorks.",
+    "validation": "Aerodynamic analysis and prototype flight-test support formed complementary parts of the internship; no quantified simulation-to-flight correlation is claimed.",
+    "results": "Contributed aerodynamic analysis and airframe CAD to prototype development.",
+    "learnings": "Hands-on experience in fixed-wing aircraft design synthesis, low-Re aerodynamic physics, and rapid flight-test iteration.",
+    "next_steps": "Automated flight data acquisition and onboard telemetry synchronization."
+  },
+  {
+    "id": "dep-aircraft-aero",
+    "title": "Aerodynamics of Passenger Aircraft with Distributed Electric Propulsion (DEP)",
+    "role": "B.Tech Honours Thesis Researcher",
+    "tags": ["Aerodynamics", "Propulsion", "CFD", "Research"],
+    "tools": ["ANSYS Fluent", "HyperMesh", "SolidWorks", "RANS"],
+    "impact": "Investigated aerodynamic interaction between a transport-aircraft wing and simplified stationary nacelle installations using steady RANS within a 4-engineer team.",
+    "summary": "Undergraduate honours thesis investigating the aerodynamic trade-offs and surface flow fields of a transport-aircraft wing integrated with distributed propulsor nacelles.",
+    "problem": "Integrating multiple propulsors along the wing span alters the local pressure field and boundary-layer development, impacting clean-wing cruise efficiency.",
+    "approach": "Modeled baseline and nacelle-installed transport wing geometries to systematically map pressure gradients, velocity profiles, and regional lift-to-drag trade-offs.",
+    "methods": "Clean-wing and installed CAD generation in SolidWorks; high-density volume meshing in HyperMesh; steady-state RANS simulations in ANSYS Fluent; post-processing of boundary-layer velocity slices.",
+    "validation": "Compared clean-wing and stationary-nacelle configurations within a four-person capstone study. The work does not represent powered propeller slipstream validation.",
+    "results": "Examined local pressure and velocity fields around stationary nacelle installations and their influence on the wing boundary layer. Rotating propellers were outside the model scope.",
+    "learnings": "Foundational grounding in 3D CFD meshing, boundary-layer physics, and propulsion-airframe integration fundamentals.",
+    "next_steps": "Full actuator disk or rotating propeller CFD modeling to capture slipstream swirl."
+  },
+  {
+    "id": "warr-cryotank-fea",
+    "title": "Cryogenic Propellant Tank Structural FEA & Buckling Analysis",
+    "role": "Mechanical / Structural Team Member @ WARR Rocketry TUM",
+    "tags": ["FEA", "Structures", "Composites", "Aerospace"],
+    "tools": ["ANSYS", "CAD", "CFRP Composites", "Buckling Analysis"],
+    "impact": "Analyzed structural performance and buckling margins of a CFRP cryogenic propellant tank for student sounding rockets under combined pressure and axial launch loads.",
+    "summary": "Structural finite element analysis and laminate optimization for lightweight carbon-fiber cryogenic propellant tanks operating under extreme pressure and thermal gradients.",
+    "problem": "Cryogenic composite tanks face high internal pressures and risk thin-wall buckling under launch acceleration and bending moments.",
+    "approach": "Contributed finite element modelling and structural assessment within a student rocketry team.",
+    "methods": "Composite structural finite element analysis and buckling assessment.",
+    "validation": "Student-team analytical and numerical structural assessment; no flight qualification or certified structural margin is claimed.",
+    "results": "Investigated structural behaviour and potential buckling modes to support student design work.",
+    "learnings": "Composite laminate analysis, cryogenic pressure vessel behavior, and structural buckling assessment.",
+    "next_steps": "Progressive failure analysis and manufacturing defect sensitivity."
+  },
+  {
+    "id": "gpr-defect-mapping",
+    "title": "Subsurface Defect Mapping Using GPR",
+    "role": "NDT Researcher",
+    "tags": ["Testing", "Research", "Automation"],
+    "tools": ["GPR (GSSI Scan Mini)", "RADAN 7"],
+    "impact": "Used ground-penetrating radar and signal processing in a non-destructive testing practical to investigate subsurface features.",
+    "summary": "Executed non-destructive inspection of concrete structures to map subsurface defects, calibrating dielectric properties and generating B- and C-scan profiles.",
+    "problem": "Detecting internal flaws in thick structures without destructive access.",
+    "approach": "Use GPR for high-frequency electromagnetic wave reflection analysis.",
+    "methods": "Radar data acquisition and processing in RADAN 7.",
+    "validation": "Verification of defect size and depth using Time-of-Flight (TOF) and permittivity calculations.",
+    "results": "Interpreted radar profiles to identify subsurface features and discuss measurement limitations.",
+    "learnings": "Experience with GPR hardware and signal processing software; understanding of wave propagation in dielectric media.",
+    "next_steps": "Integration of automated robotic scanning for larger surfaces."
+  },
+  {
+    "id": "rc-water-carrier",
+    "title": "Optimized Additive Manufacturing: RC Transport Vehicle",
+    "role": "TUM Additive Manufacturing Lab",
+    "tags": ["Manufacturing", "Testing", "Automotive"],
+    "tools": ["Siemens NX", "PrusaSlicer", "FDM"],
+    "impact": "Designed and prototyped a 3D-printed RC transport vehicle in an additive manufacturing practical.",
+    "summary": "High-performance functional prototyping focusing on weight optimization and load-bearing capacity using FDM printing.",
+    "problem": "Carry a 500g payload on a lightweight 3D-printed chassis.",
+    "approach": "Topology optimization and functional integration of wheels and chassis.",
+    "methods": "NX-based design; material property testing; iterative prototyping.",
+    "validation": "Track testing under load.",
+    "results": "Built and evaluated a functional prototype as part of a student design exercise.",
+    "learnings": "Design for Additive Manufacturing (DfAM); load-path optimization.",
+    "next_steps": "Integration of sensors for autonomous navigation."
+  },
+  {
+    "id": "leo-satellite-power",
+    "title": "Spacecraft Power Subsystem Architecture",
+    "role": "Systems Engineer",
+    "tags": ["Systems", "Research", "Aerospace"],
+    "tools": ["MATLAB", "LaTeX", "Sparkwing", "GomSpace"],
+    "impact": "Architected the end-to-end power system for a LEO debris-tracking satellite, including orbital energy balance and hardware sizing.",
+    "summary": "Designed generation, storage, and distribution systems for an AI-based LEO mission, selecting mission-critical hardware and performing energy balance modeling.",
+    "problem": "Ensure continuous power supply for high-demand AI processing on a limited LEO cube-sat platform.",
+    "approach": "System-level modeling of generation vs consumption throughout the orbital cycle.",
+    "methods": "Orbital mechanics for solar flux calculation; component selection (EaglePicher batteries, Sparkwing arrays).",
+    "validation": "Worse-case scenario analysis (eclipse duration, peak load).",
+    "results": "Developed solar-array and battery sizing estimates for an academic spacecraft power budget. This was a conceptual design study, not flight-hardware delivery.",
+    "learnings": "Space hardware standards and orbital energy budget workflows.",
+    "next_steps": "Integration of thermal management constraints into the power model."
+  },
+  {
+    "id": "baja-sae-buggy",
+    "title": "Baja SAE ATV Design & Integration",
+    "role": "Mechanical Designer",
+    "tags": ["Manufacturing", "Testing", "Automotive"],
+    "tools": ["SolidWorks", "Manual Machining"],
+    "impact": "Contributed to chassis, suspension and vehicle assembly in a student off-road engineering project.",
+    "summary": "Designed and fabricated core subsystems for a high-performance off-road vehicle, focusing on structural integrity and suspension geometry.",
+    "problem": "Develop a lightweight yet durable chassis for extreme off-road competition.",
+    "approach": "Iterative design focusing on occupant safety and vehicle dynamics.",
+    "methods": "Chassis modeling; suspension kinematics optimization; manual jig assembly and welding support.",
+    "validation": "Student design and assembly work; no formal vehicle qualification is claimed.",
+    "results": "Supported integration of mechanical subsystems into the student vehicle.",
+    "learnings": "Practical manufacturing skills; suspension geometry; team-based engineering.",
+    "next_steps": "Weight reduction through carbon-fiber body panels."
+  }
 ]

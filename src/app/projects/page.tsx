@@ -1,82 +1,96 @@
 "use client";
-
-import { motion } from "framer-motion";
+import { useReaderLanguage, LanguageNote } from "@/components/ReaderLanguage";
+import { useState } from "react";
+import { Search } from "lucide-react";
 import { ProjectCard } from "@/components/ProjectCard";
 import projects from "@/data/projects.json";
-import { useState } from "react";
-import { Layers, Database, Cpu } from "lucide-react";
-
-const allTags = Array.from(new Set(projects.flatMap((p) => p.tags)));
-
-export default function ProjectsPage() {
-    const [activeTag, setActiveTag] = useState<string | null>(null);
-
-    const filteredProjects = activeTag
-        ? projects.filter((p) => p.tags.includes(activeTag))
-        : projects;
-
-    return (
-        <div className="container mx-auto px-6 py-24">
-            <header className="mb-24 relative">
-                <div className="flex items-center gap-4 text-primary text-[10px] font-black uppercase tracking-[0.5em] mb-6">
-                    <Database className="h-4 w-4" />
-                    Archive_Index_v3.0
-                </div>
-                <h1 className="font-outfit text-7xl font-black uppercase tracking-tighter md:text-9xl text-speed">
-                    ENGINEERING <span className="text-primary glow-red">LOGS</span>.
-                </h1>
-
-                {/* HUD Filter Bar */}
-                <div className="mt-16 flex flex-wrap gap-4 glass-panel p-6 rounded-2xl hud-corner">
-                    <button
-                        onClick={() => setActiveTag(null)}
-                        className={`flex items-center gap-3 px-6 py-2 text-[10px] font-black uppercase tracking-widest transition-all rounded-full ${activeTag === null ? "bg-primary text-black" : "text-white/40 hover:text-white"
-                            }`}
-                    >
-                        <Layers className="h-3 w-3" />
-                        ALL_STATION
-                    </button>
-                    {allTags.map((tag) => (
-                        <button
-                            key={tag}
-                            onClick={() => setActiveTag(tag)}
-                            className={`px-6 py-2 text-[10px] font-black uppercase tracking-widest transition-all rounded-full border border-white/5 ${activeTag === tag ? "bg-secondary text-black" : "text-white/40 hover:text-secondary group-hover:border-secondary/20"
-                                }`}
-                        >
-                            {tag}
-                        </button>
-                    ))}
-                </div>
-            </header>
-
-            <motion.div
-                layout
-                className="grid gap-10 md:grid-cols-2 lg:grid-cols-3"
+const filters = [
+  "All",
+  "Aerodynamics",
+  "CFD",
+  "Research",
+  "Testing",
+  "Manufacturing",
+];
+export default function Projects() {
+  const { language } = useReaderLanguage();
+  const [filter, setFilter] = useState("All");
+  const [query, setQuery] = useState("");
+  const visible = projects.filter(
+    (p) =>
+      (filter === "All" || p.tags.includes(filter)) &&
+      `${p.title} ${p.impact} ${p.tools.join(" ")} ${p.tags.join(" ")}`
+        .toLowerCase()
+        .includes(query.toLowerCase()),
+  );
+  return (
+    <div className="shell section">
+      <p className="eyebrow">Engineering / Project archive</p>
+      <h1 className="page-title">
+        {language === "fr"
+          ? "Des idées explorées."
+          : language === "de"
+            ? "Ideen untersucht."
+            : "Ideas, investigated."}
+        <br />
+        <em>
+          {language === "fr"
+            ? "Des méthodes développées."
+            : language === "de"
+              ? "Methoden entwickelt."
+              : "Methods, developed."}
+        </em>
+      </h1>
+      <p className="section-description">
+        Explore research, scientific software and hands-on engineering. Select a
+        discipline or search by project or tool.
+      </p>
+      <LanguageNote />
+      <div className="filter-toolbar">
+        <div className="filters" aria-label="Filter by discipline">
+          {filters.map((f) => (
+            <button
+              key={f}
+              aria-pressed={f === filter}
+              onClick={() => setFilter(f)}
             >
-                {filteredProjects.map((project, idx) => (
-                    <motion.div
-                        key={project.id}
-                        layout
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5, delay: idx * 0.05 }}
-                    >
-                        <ProjectCard project={project} />
-                    </motion.div>
-                ))}
-            </motion.div>
-
-            {/* Empty State */}
-            {filteredProjects.length === 0 && (
-                <div className="flex flex-col items-center justify-center py-48 glass-panel rounded-3xl border-dashed">
-                    <Cpu className="h-16 w-16 text-white/10 mb-6 animate-pulse" />
-                    <p className="text-[10px] font-black uppercase tracking-[0.5em] text-white/20">No matching telemetry found.</p>
-                </div>
-            )}
-
-            <footer className="mt-48 text-center opacity-20">
-                <div className="text-[8px] font-mono tracking-[1em] uppercase">End of Encrypted Archive</div>
-            </footer>
+              {f}
+            </button>
+          ))}
         </div>
-    );
+        <label className="search-field">
+          <Search size={18} />
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search projects…"
+            aria-label="Search projects"
+          />
+        </label>
+      </div>
+      <p className="result-count" role="status">
+        {visible.length} {visible.length === 1 ? "project" : "projects"}
+      </p>
+      <div className="featured-grid">
+        {visible.map((p) => (
+          <ProjectCard key={p.id} project={p} />
+        ))}
+      </div>
+      {!visible.length && (
+        <div className="empty-state">
+          <h2>No matching projects.</h2>
+          <p>Try another discipline or search term.</p>
+          <button
+            className="button-primary"
+            onClick={() => {
+              setFilter("All");
+              setQuery("");
+            }}
+          >
+            Clear filters
+          </button>
+        </div>
+      )}
+    </div>
+  );
 }
