@@ -1,55 +1,62 @@
 import type { Metadata } from "next";
 import { Inter, Outfit, Fira_Code } from "next/font/google";
 import "./globals.css";
-import { ReaderLanguage } from "@/components/ReaderLanguage";
 import { Navbar } from "@/components/Navbar";
-import Link from "next/link";
+import { SocialSidebar, StatusSidebar } from "@/components/Sidebars";
+import { LoadingScreen } from "@/components/LoadingScreen";
+import { ProtocolSwitcher } from "@/components/ProtocolSwitcher";
 import { PortfolioMode } from "@/components/PortfolioMode";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 const fira = Fira_Code({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-  title: {
-    default:
-      "Reghuram Kesavan — Aerospace Engineer & Multidisciplinary Creator",
-    template: "%s | Reghuram Kesavan",
-  },
+  title: "reghuram.kesavan.portfolio // PORTFOLIO_ARCHIVE",
   description:
-    "Aircraft aerodynamics, turbomachinery, RANS CFD, competitive gaming reflex, and urban choreography. Explore Reghuram Kesavan's dual-mode research and personal portfolio.",
-  metadataBase: new URL("https://reghuram-kesavan.vercel.app"),
+    "Reghuram Kesavan — Aerospace Engineer | ISAE-SUPAERO M2 | TUM | KTU | Turbomachinery, Aerodynamics & Multidisciplinary Profile",
+  metadataBase: new URL("https://reghuram-kesavan.github.io"),
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${outfit.variable} ${fira.variable}`}>
-        <ReaderLanguage>
-          <PortfolioMode>
-            <a className="skip-link" href="#main">
-              Skip to content
-            </a>
-            <Navbar />
-            <main id="main">{children}</main>
+    <html lang="en" className="dark scroll-smooth">
+      <body
+        className={cn(
+          inter.variable,
+          outfit.variable,
+          fira.variable,
+          "min-h-screen bg-background font-sans text-foreground antialiased transition-colors duration-1000"
+        )}
+      >
+        <PortfolioMode>
+          <LoadingScreen />
+          <ProtocolSwitcher />
 
-            <footer className="site-footer">
-              <Link href="/" className="brand-mark">
-                rk<span>.</span>
-              </Link>
-              <p>Engineering with curiosity. Creating with intent.</p>
-              <div>
-                <Link href="/skills">Capabilities</Link>
-                <Link href="/mission-prep">Project matcher</Link>
-                <Link href="/contact">Contact</Link>
-                <a href="/resume.pdf">CV ↗</a>
-              </div>
-              <small>Reghuram Kesavan · Toulouse, France</small>
-            </footer>
-          </PortfolioMode>
-        </ReaderLanguage>
+          <div className="relative flex min-h-screen flex-col overflow-x-hidden">
+            {/* Advanced HUD Background */}
+            <div className="fixed inset-0 z-[-1] grid-bg" />
+            <div className="scan-bar" />
+            <div className="fixed inset-0 z-[-2] carbon-mask" />
+
+            <Navbar />
+            <SocialSidebar />
+            <StatusSidebar />
+
+            <main className="flex-1 pt-32">{children}</main>
+
+            {/* Global Texture Overlay */}
+            <div className="pointer-events-none fixed inset-0 z-[100] opacity-[0.02] grayscale bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+          </div>
+        </PortfolioMode>
       </body>
     </html>
   );

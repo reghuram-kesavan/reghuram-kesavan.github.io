@@ -1,281 +1,310 @@
 "use client";
-import { useState } from "react";
-import Image from "next/image";
+
+import { motion } from "framer-motion";
+import { ArrowRight, Terminal as TerminalIcon, Eye, Zap, Rocket } from "lucide-react";
 import Link from "next/link";
-import { ArrowUpRight, ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
+import { QuickView } from "@/components/QuickView";
+import { ProjectCard } from "@/components/ProjectCard";
+import { TacticalArena } from "@/components/TacticalArena";
+import { AerospaceCockpit } from "@/components/AerospaceCockpit";
 import { usePortfolioMode } from "@/components/PortfolioMode";
-import { useReaderLanguage } from "@/components/ReaderLanguage";
-import { ProjectScene } from "@/components/ProjectScene";
 import projects from "@/data/projects.json";
-import translations from "@/data/project-translations.json";
-const selection = [
-  {
-    id: "vorom-x-aerodynamics",
-    name: "VOROM-X",
-    type: "Aerodynamic methods",
-    question: "How much can a simpler model tell us?",
-    discipline: "01 / SCIENTIFIC COMPUTING",
-  },
-  {
-    id: "high-lift-aerodynamics",
-    name: "High-lift",
-    type: "Transition & separation",
-    question: "When models disagree, look at the flow.",
-    discipline: "02 / AIRCRAFT AERODYNAMICS",
-  },
-  {
-    id: "trace-fangeo",
-    name: "TRACE FanGEO",
-    type: "Throughflow & geometry",
-    question: "From a design requirement to a blade.",
-    discipline: "03 / PROPULSION",
-  },
-  {
-    id: "apexsim-aerodynamics",
-    name: "ApexSim",
-    type: "CFD workflow development",
-    question: "A better workflow before a faster lap.",
-    discipline: "04 / MOTORSPORT METHODS",
-  },
-  {
-    id: "lilium-sandwich-structures",
-    name: "Lilium",
-    type: "Mechanical test hardware",
-    question: "The model has to meet the hardware.",
-    discipline: "05 / INDUSTRY",
-  },
-];
+import profile from "@/data/profile.json";
+
 export default function Home() {
-  const [active, setActive] = useState(0);
-  const { mode } = usePortfolioMode();
-  const { language } = useReaderLanguage();
-  const pro = mode === "professional";
-  const tr = (en: string, fr: string, de: string) =>
-    language === "fr" ? fr : language === "de" ? de : en;
-  const item = selection[active];
-  const project = projects.find((p) => p.id === item.id)!;
-  const summary =
-    language === "en"
-      ? project.impact
-      : (translations as Record<string, string[]>)[item.id][
-          language === "fr" ? 0 : 1
-        ];
+  const { mode, setMode } = usePortfolioMode();
+  const isPersonal = mode === "personal";
+
   return (
-    <div className={`portfolio-edition ${pro ? "edition-professional" : ""}`}>
-      <section className="edition-hero">
-        <div className="edition-hero-top">
-          <span>REGHURAM KESAVAN</span>
-          <span>TOULOUSE, FRANCE ↗</span>
-        </div>
-        <div className="edition-hero-grid">
-          <div className="edition-headline">
-            <p className="edition-kicker">
-              {tr(
-                "AEROSPACE ENGINEER / MECHANICAL ROOTS",
-                "INGÉNIEUR AÉROSPATIAL / FORMATION MÉCANIQUE",
-                "LUFT- UND RAUMFAHRT / MASCHINENBAU",
-              )}
-            </p>
-            <h1>
-              {tr("Engineering", "Ingénierie", "Engineering")}
-              <br />
-              <span>{tr("in motion.", "en mouvement.", "in Bewegung.")}</span>
-            </h1>
-            <p className="edition-intro">
-              {pro
-                ? tr(
-                    "Aerodynamics, propulsion and scientific computing. Research at ISAE-SUPAERO. Graduate studies at TUM. Industry experience at Lilium.",
-                    "Aérodynamique, propulsion et calcul scientifique. Recherche à l’ISAE-SUPAERO, études à la TUM et expérience chez Lilium.",
-                    "Aerodynamik, Antrieb und wissenschaftliches Rechnen. Forschung an der ISAE-SUPAERO, Studien an der TUM und Industrieerfahrung bei Lilium.",
-                  )
-                : tr(
-                    "Curious about how things move. Relentless about understanding why. I connect aerodynamic thinking, computational methods and the reality of building things.",
-                    "Comprendre le mouvement. Chercher ses causes. Je relie réflexion aérodynamique, méthodes numériques et réalité de la conception.",
-                    "Neugierig, wie sich Dinge bewegen. Entschlossen, das Warum zu verstehen. Ich verbinde Aerodynamik, numerische Methoden und praktische Konstruktion.",
-                  )}
-            </p>
-            <a className="edition-main-cta" href="#selected-work">
-              {tr(
-                "Explore the work",
-                "Explorer les projets",
-                "Arbeiten entdecken",
-              )}
-              <ArrowDown size={20} />
-            </a>
-          </div>
-          <div className="edition-portrait">
-            <Image
-              src="/profile-hero.png"
-              alt="Reghuram Kesavan"
-              width={1024}
-              height={1024}
-              priority
-              sizes="(max-width:760px) 95vw, 48vw"
-            />
-            <div className="portrait-credit">
-              <span>THE PERSON BEHIND THE WORK</span>
-              <span>RK / 01</span>
-            </div>
-            <span className="portrait-orbit" aria-hidden="true" />
-          </div>
-        </div>
-        <div className="edition-baseline">
-          <span>
-            INDIA <i /> GERMANY <i /> FRANCE
-          </span>
-          <p>
-            {tr(
-              "A mechanical foundation. An aerospace direction.",
-              "Une base mécanique. Un cap aérospatial.",
-              "Ein Fundament im Maschinenbau. Ein Weg in die Luft- und Raumfahrt.",
-            )}
-          </p>
-          <span>SCROLL TO DISCOVER ↓</span>
-        </div>
-      </section>
-      <section id="selected-work" className="edition-work">
-        <div className="edition-section-top">
-          <p>
-            01 —{" "}
-            {tr("SELECTED WORK", "PROJETS CHOISIS", "AUSGEWÄHLTE ARBEITEN")}
-          </p>
-          <Link href="/projects">
-            {tr("All case studies", "Tous les projets", "Alle Projekte")}{" "}
-            <ArrowUpRight size={17} />
-          </Link>
-        </div>
-        <div className="edition-work-heading">
-          <h2>
-            {tr("Ideas into", "Des idées aux", "Von Ideen zu")}
-            <br />
-            <em>{tr("engineering.", "réalisations.", "Ingenieurarbeit.")}</em>
-          </h2>
-          <p>
-            {tr(
-              "Five perspectives on the same ambition: understand the physics, develop the method, question the result.",
-              "Cinq perspectives, une ambition : comprendre la physique, développer la méthode, interroger le résultat.",
-              "Fünf Perspektiven, ein Anspruch: Physik verstehen, Methoden entwickeln, Ergebnisse hinterfragen.",
-            )}
-          </p>
-        </div>
-        <div
-          className="edition-selector"
-          aria-label="Choose a featured project"
+    <div className="container mx-auto px-6 pb-24">
+      {/* ========================================================================= */}
+      {/* SICK HERO SECTION (RESTORED ULTRA-HIGH-OCTANE AERO-PILOT VISUAL)         */}
+      {/* ========================================================================= */}
+      <section className="relative min-h-[92vh] flex flex-col lg:flex-row items-center justify-between gap-16 py-12 lg:py-20">
+        {/* Profile Image - The "Aero-Pilot" Visual */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="relative order-2 lg:order-1 flex-1 max-w-2xl w-full"
         >
-          {selection.map((s, i) => (
-            <button
-              key={s.id}
-              aria-pressed={i === active}
-              onClick={() => setActive(i)}
+          <div className="relative group perspective-view">
+            {/* HUD Viewfinder Overlay */}
+            <div className="absolute -inset-4 z-20 border border-primary/20 pointer-events-none transition-all group-hover:-inset-6">
+              <div className="absolute top-0 left-0 w-12 h-[2px] bg-primary shadow-[0_0_15px_rgba(var(--color-primary),0.8)]" />
+              <div className="absolute top-0 left-0 w-[2px] h-12 bg-primary shadow-[0_0_15px_rgba(var(--color-primary),0.8)]" />
+              <div className="absolute bottom-0 right-0 w-12 h-[2px] bg-primary shadow-[0_0_15px_rgba(var(--color-primary),0.8)]" />
+              <div className="absolute bottom-0 right-0 w-[2px] h-12 bg-primary shadow-[0_0_15px_rgba(var(--color-primary),0.8)]" />
+            </div>
+
+            {/* Main Image with Mask */}
+            <div className="relative z-10 overflow-hidden rounded-[3.5rem] lg:rounded-[4rem] border-4 border-white/10 shadow-2xl glass-panel aspect-square max-h-[580px] w-full">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/profile-hero.png"
+                alt="Reghuram Kesavan"
+                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+              />
+              {/* Stealth Tint Overlay */}
+              <div className="absolute inset-0 bg-primary/10 mix-blend-overlay pointer-events-none" />
+
+              {/* Scanning Laser Line */}
+              <motion.div
+                animate={{ top: ["-10%", "110%"] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                className="absolute left-0 w-full h-[2px] bg-primary/70 shadow-[0_0_30px_rgba(var(--color-primary),1)] z-20"
+              />
+            </div>
+
+            {/* Floating Bio Tag */}
+            <div className="absolute -bottom-8 -right-4 sm:-bottom-10 sm:-right-8 z-30 glass-panel hud-corner p-5 sm:p-6 rounded-2xl border-2 border-primary group-hover:translate-x-3 group-hover:-translate-y-3 transition-transform duration-500 shadow-2xl">
+              <div className="flex items-center gap-4">
+                <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-primary/20 flex items-center justify-center border border-primary">
+                  <Eye className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <div className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">
+                    Identity_Verified
+                  </div>
+                  <div className="text-lg sm:text-xl font-black text-white">
+                    reghuram.kesavan.portfolio
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Decorative Tech Rings */}
+            <div className="absolute -inset-16 sm:-inset-20 z-0 animate-[spin_60s_linear_infinite] pointer-events-none opacity-20">
+              <svg viewBox="0 0 100 100" className="w-full h-full">
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="48"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="0.1"
+                  strokeDasharray="1 5"
+                />
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="42"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="0.05"
+                  strokeDasharray="0.5 2"
+                />
+              </svg>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Text Content */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+          className="z-10 order-1 lg:order-2 flex-1 w-full"
+        >
+          {/* Subtitle Tags */}
+          <div className="mb-8 sm:mb-10 flex flex-wrap gap-4 sm:gap-6">
+            {[
+              "AEROSPACE",
+              "HIPHOP & DANCE",
+              "GAMING & VALORANT",
+              "F1 MOTORSPORT",
+            ].map((tag) => (
+              <span
+                key={tag}
+                className="text-[11px] sm:text-[12px] font-black tracking-[0.4em] sm:tracking-[0.6em] text-primary border-l-2 border-primary/40 pl-3 sm:pl-4 uppercase"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {/* Huge Title */}
+          <h1 className="mb-8 sm:mb-10 font-outfit text-5xl sm:text-7xl md:text-8xl lg:text-[8.5rem] font-black leading-[0.82] tracking-tighter text-speed text-white drop-shadow-2xl">
+            REGHURAM
+            <br />
+            <span className="text-primary/40">KESAVAN.</span>
+          </h1>
+
+          {/* Active Profile HUD Box */}
+          <div className="glass-panel hud-corner mb-10 sm:mb-12 max-w-xl p-8 sm:p-10 rounded-tr-[3.5rem] sm:rounded-tr-[4rem] group border-2 border-white/10 shadow-2xl">
+            <div className="flex items-center gap-3 text-secondary mb-4 sm:mb-6 border-b border-white/5 pb-3 sm:pb-4">
+              <TerminalIcon className="h-5 w-5 text-primary" />
+              <span className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.5em] text-primary">
+                Active_Operational_Profile
+              </span>
+            </div>
+            <p className="text-base sm:text-lg font-bold leading-relaxed text-white">
+              {profile.summary}
+            </p>
+          </div>
+
+          {/* Action CTAs */}
+          <div className="flex flex-wrap items-center gap-6 sm:gap-8">
+            <Link
+              href="/projects"
+              className="group relative flex h-16 sm:h-20 items-center justify-center overflow-hidden rounded-2xl bg-primary px-10 sm:px-16 transition-all hover:scale-105 active:scale-95 glow-red shadow-2xl"
             >
-              <small>0{i + 1}</small>
-              {s.name}
-              <span>↗</span>
+              <div className="absolute inset-0 bg-white/20 translate-y-full transition-transform group-hover:translate-y-0" />
+              <span className="relative z-10 text-[11px] sm:text-[12px] font-black uppercase tracking-[0.4em] text-black">
+                Execute_Mission
+              </span>
+            </Link>
+
+            <button
+              onClick={() =>
+                setMode(isPersonal ? "professional" : "personal")
+              }
+              className="flex h-16 sm:h-20 items-center gap-3 rounded-2xl bg-white/5 border border-white/10 px-8 sm:px-10 text-[11px] sm:text-[12px] font-black uppercase tracking-[0.3em] text-white hover:bg-white/10 hover:border-primary transition-all"
+            >
+              {isPersonal ? (
+                <>
+                  <Rocket className="h-5 w-5 text-primary" />
+                  <span>Enter Cockpit Mode [M]</span>
+                </>
+              ) : (
+                <>
+                  <Zap className="h-5 w-5 text-primary" />
+                  <span>Enter Tactical Arena [M]</span>
+                </>
+              )}
             </button>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* STATS DIVIDER DASHBOARD (RPM, DRS, BPM, AERO)                            */}
+      {/* ========================================================================= */}
+      <div className="my-24 sm:my-32 relative">
+        <div className="absolute inset-0 grid-bg opacity-30" />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {[
+            { label: "RPM_SYNC", val: "12,400", sub: "Turbomachinery Redline" },
+            { label: "DRS_STATUS", val: "ACTIVE", sub: "F1 High-Speed Drag" },
+            { label: "BPM_PROTOCOL", val: "128_SYNC", sub: "Abrupt Family / WOD" },
+            { label: "AERO_STABILITY", val: "0.98_M", sub: "Static Margin Kn" },
+          ].map((stat, i) => (
+            <div
+              key={i}
+              className="glass-panel p-6 sm:p-8 rounded-3xl text-center border-b-2 border-white/10 hover:border-primary transition-all duration-300 shadow-xl"
+            >
+              <div className="text-[10px] font-black uppercase tracking-[0.5em] text-white/30 mb-2">
+                {stat.label}
+              </div>
+              <div className="text-2xl sm:text-4xl font-black italic tracking-tighter text-white mb-1">
+                {stat.val}
+              </div>
+              <div className="text-[8px] font-mono tracking-widest text-primary/70 uppercase">
+                {stat.sub}
+              </div>
+            </div>
           ))}
         </div>
-        <div className="edition-feature" key={item.id}>
-          <div className="edition-feature-art">
-            <ProjectScene id={item.id} />
+      </div>
+
+      {/* ========================================================================= */}
+      {/* DYNAMIC PROTOCOL SECTION: TACTICAL ARENA VS AEROSPACE COCKPIT             */}
+      {/* ========================================================================= */}
+      <div className="my-16 sm:my-24">
+        {isPersonal ? (
+          <div id="tactical-arena">
+            <TacticalArena />
           </div>
-          <div className="edition-feature-copy" aria-live="polite">
-            <span className="edition-kicker">{item.discipline}</span>
-            <h3>
-              {item.name}
-              <span>{item.type}</span>
-            </h3>
-            <p lang={language}>{summary}</p>
-            <div className="edition-tools">
-              {project.tools.slice(0, 3).map((t) => (
-                <span key={t}>{t}</span>
-              ))}
-            </div>
-            <Link href={`/projects/${item.id}`} className="edition-case-link">
-              {tr("Inside the project", "Explorer le projet", "Zum Projekt")}{" "}
-              <ArrowUpRight />
-            </Link>
-            <div className="edition-pager">
-              <button
-                aria-label="Previous featured project"
-                onClick={() =>
-                  setActive((active + selection.length - 1) % selection.length)
-                }
-              >
-                <ArrowLeft size={18} />
-              </button>
-              <span>0{active + 1} / 05</span>
-              <button
-                aria-label="Next featured project"
-                onClick={() => setActive((active + 1) % selection.length)}
-              >
-                <ArrowRight size={18} />
-              </button>
-            </div>
+        ) : (
+          <div id="aerospace-cockpit">
+            <AerospaceCockpit />
           </div>
-        </div>
-      </section>
-      <section className="edition-journey">
-        <div className="edition-section-top">
-          <p>02 — {tr("THE JOURNEY", "LE PARCOURS", "DER WEG")}</p>
-          <Link href="/profile">
-            {tr("Full profile", "Profil complet", "Vollständiges Profil")}{" "}
-            <ArrowUpRight size={17} />
-          </Link>
-        </div>
-        <div className="edition-journey-grid">
-          <h2>
-            {tr("Built across", "Un parcours", "Geprägt durch")}
-            <br />
-            <em>{tr("disciplines.", "pluridisciplinaire.", "Vielfalt.")}</em>
+        )}
+      </div>
+
+      {/* ========================================================================= */}
+      {/* CORE TELEMETRY & SYSTEM SPECIFICATIONS (QUICKVIEW)                       */}
+      {/* ========================================================================= */}
+      <section className="my-28 sm:my-36 grid gap-16 lg:grid-cols-2 items-start">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+        >
+          <QuickView />
+        </motion.div>
+
+        <div className="space-y-8 sm:space-y-10 py-6">
+          <h2 className="font-outfit text-5xl sm:text-6xl font-black uppercase tracking-tighter text-white">
+            Core <span className="text-primary glow-red">Telemetry</span>.
           </h2>
-          <div>
+          <div className="grid gap-6">
             {[
-              [
-                "01",
-                "ISAE-SUPAERO",
-                "Aerodynamics & propulsion",
-                "Toulouse · Master’s candidate",
-              ],
-              [
-                "02",
-                "Lilium",
-                "Mechanical design & test hardware",
-                "Munich · Industry experience",
-              ],
-              ["03", "TUM", "Graduate aerospace studies", "Munich · 57 ECTS"],
-              [
-                "04",
-                "KTU",
-                "Mechanical engineering",
-                "India · B.Tech (Honours)",
-              ],
-            ].map(([n, title, focus, detail]) => (
-              <Link href="/profile" key={n} className="edition-journey-row">
-                <span>{n}</span>
-                <div>
-                  <h3>{title}</h3>
-                  <p>{focus}</p>
-                  <small>{detail}</small>
+              {
+                label: "Research Focus",
+                val: "Parametric Fan Blade Modelling & BFM (ISAE-SUPAERO Thesis)",
+              },
+              {
+                label: "Industrial Phase",
+                val: "Mechanical Test Hardware at Lilium (ASME Y14.5 GD&T & FEA)",
+              },
+              {
+                label: "Validated Skills",
+                val: "RANS CFD, Structured Meshing (y+ < 1), Siemens NX, Python",
+              },
+              {
+                label: "Academic Ledger",
+                val: "ISAE-SUPAERO M2 · TUM 57 ECTS · KTU B.Tech Honours 9.28 CGPA",
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="glass-panel p-6 sm:p-8 rounded-2xl border-l-4 border-primary shadow-xl"
+              >
+                <div className="text-[10px] font-black uppercase tracking-[0.4em] text-primary mb-2">
+                  {item.label}
                 </div>
-                <ArrowUpRight size={20} />
-              </Link>
+                <div className="text-lg sm:text-xl font-bold text-white leading-snug">
+                  {item.val}
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
-      <section className="edition-contact">
-        <p>03 — {tr("WHAT’S NEXT", "LA SUITE", "WAS KOMMT")}</p>
-        <h2>
-          {tr("Let’s build", "Construisons", "Gemeinsam")}
-          <br />
-          <em>{tr("something real.", "du concret.", "etwas schaffen.")}</em>
-        </h2>
-        <a href="mailto:rgkreghu989@gmail.com">
-          rgkreghu989@gmail.com <ArrowUpRight size={25} />
-        </a>
-        <Link href="/resume">
-          {tr("View my CV", "Voir mon CV", "Mein Lebenslauf")} ↗
-        </Link>
+
+      {/* ========================================================================= */}
+      {/* PROJECT MATRIX (SICK 3D CASE STUDY CARDS)                                 */}
+      {/* ========================================================================= */}
+      <section className="mt-36 sm:mt-48 relative">
+        <div className="mb-16 sm:mb-20 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+          <div className="max-w-4xl">
+            <h2 className="font-outfit text-5xl sm:text-7xl md:text-[6.5rem] font-black uppercase tracking-tighter text-white leading-[0.88]">
+              PROJECT <span className="text-primary glow-red">MATRIX</span>.
+            </h2>
+          </div>
+          <Link
+            href="/projects"
+            className="group flex items-center space-x-4 sm:space-x-6 text-[12px] sm:text-[14px] font-black uppercase tracking-[0.6em] sm:tracking-[0.8em] text-primary transition-all hover:tracking-[1em]"
+          >
+            <span>FULL_ARCHIVE (48)</span>
+            <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6 transition-transform group-hover:translate-x-2" />
+          </Link>
+        </div>
+
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          {projects.slice(0, 6).map((project, idx) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.15, duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <ProjectCard project={project} />
+            </motion.div>
+          ))}
+        </div>
       </section>
     </div>
   );

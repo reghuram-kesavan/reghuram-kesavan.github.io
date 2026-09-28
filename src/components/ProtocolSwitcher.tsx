@@ -2,34 +2,36 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Zap, Rocket, Terminal } from "lucide-react";
+import { Zap, GraduationCap, Terminal } from "lucide-react";
 import { usePortfolioMode } from "./PortfolioMode";
 
 export function ProtocolSwitcher() {
   const { mode, setMode } = usePortfolioMode();
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [transitionTarget, setTransitionTarget] = useState<string>("");
+
+  useEffect(() => {
+    document.documentElement.setAttribute(
+      "data-protocol",
+      mode === "professional" ? "professional" : "creative"
+    );
+  }, [mode]);
 
   const toggleProtocol = () => {
     if (isTransitioning) return;
-    const nextMode = mode === "personal" ? "professional" : "personal";
-    setTransitionTarget(
-      nextMode === "professional"
-        ? "INITIALIZING AEROSPACE COCKPIT // PROTOCOL 02"
-        : "INITIALIZING TACTICAL & LIFESTYLE ARENA // PROTOCOL 01"
-    );
     setIsTransitioning(true);
+    const nextMode = mode === "personal" ? "professional" : "personal";
+    const nextProto = nextMode === "professional" ? "professional" : "creative";
 
     setTimeout(() => {
       setMode(nextMode);
-      setTimeout(() => setIsTransitioning(false), 550);
+      document.documentElement.setAttribute("data-protocol", nextProto);
+      setTimeout(() => setIsTransitioning(false), 700);
     }, 350);
   };
 
   // Keyboard shortcut: Press 'M' to toggle modes
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Don't trigger if user is typing in an input or textarea
       const target = e.target as HTMLElement;
       if (
         target.tagName === "INPUT" ||
@@ -51,62 +53,69 @@ export function ProtocolSwitcher() {
 
   return (
     <>
-      {/* Floating HUD Controller */}
-      <aside
-        aria-label="Mode switcher"
-        className="fixed bottom-8 right-8 z-[90] flex items-center gap-3"
-      >
+      <div className="fixed top-32 right-8 z-[100] flex flex-col items-center space-y-4">
+        <div
+          className="text-[8px] font-black uppercase tracking-[0.4em] text-white/40 mb-2"
+          style={{ writingMode: "vertical-rl" }}
+        >
+          Protocol_Select
+        </div>
         <button
           onClick={toggleProtocol}
           disabled={isTransitioning}
-          className={`protocol-hud-pill ${mode === "professional" ? "aero-active" : "personal-active"}`}
-          title="Switch protocol or press [M]"
-          aria-label={`Current protocol: ${
-            mode === "personal" ? "Tactical & Lifestyle" : "Aerospace Cockpit"
-          }. Click or press M to toggle.`}
+          className="group relative flex h-16 w-16 items-center justify-center rounded-3xl bg-black/60 border border-white/20 transition-all hover:bg-primary/20 hover:scale-110 active:scale-95 glow-red overflow-hidden shadow-2xl backdrop-blur-2xl"
+          title="Toggle protocol or press [M]"
         >
-          <div className="hud-icon-wrap">
-            {mode === "personal" ? (
-              <Zap className="h-5 w-5 text-amber-400 animate-pulse" />
-            ) : (
-              <Rocket className="h-5 w-5 text-cyan-400 animate-pulse" />
-            )}
-          </div>
+          <div className="absolute inset-x-0 h-[1px] bg-primary/60 top-0 group-hover:top-full transition-all duration-1000" />
 
-          <div className="hud-text-wrap">
-            <span className="hud-protocol-id">
-              {mode === "personal" ? "PROTOCOL 01 // LIFESTYLE" : "PROTOCOL 02 // AEROSPACE"}
-            </span>
-            <span className="hud-sub-label">
-              {mode === "personal"
-                ? "Switch to Aerospace Cockpit [M]"
-                : "Switch to Tactical Arena [M]"}
-            </span>
+          <motion.div
+            animate={{
+              rotate: mode === "personal" ? 0 : 180,
+              scale: isTransitioning ? 0.5 : 1,
+            }}
+            className="relative flex h-full w-full items-center justify-center"
+          >
+            {mode === "personal" ? (
+              <Zap className="h-6 w-6 text-primary" />
+            ) : (
+              <GraduationCap className="h-6 w-6 text-primary" />
+            )}
+          </motion.div>
+
+          <div className="absolute right-24 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all group-hover:right-20 bg-black/95 px-6 py-3 rounded-2xl border border-white/20 shadow-2xl pointer-events-none">
+            <div className="flex flex-col">
+              <span className="text-[10px] font-black uppercase tracking-widest text-primary">
+                Switch Protocol [M]
+              </span>
+              <span className="text-[8px] font-medium text-white/50 uppercase tracking-widest mt-1">
+                Target: {mode === "personal" ? "Aerospace Cockpit" : "Tactical Arena"}
+              </span>
+            </div>
           </div>
         </button>
-      </aside>
+      </div>
 
-      {/* Futuristic Scanline HUD Transition Overlay */}
       <AnimatePresence>
         {isTransitioning && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-[99999] pointer-events-none flex flex-col items-center justify-center bg-black/85 backdrop-blur-md"
+            className="fixed inset-0 z-[99999] pointer-events-none flex items-center justify-center bg-black/90 backdrop-blur-md"
           >
-            <div className="flex flex-col items-center px-6 text-center">
-              <Terminal className="h-12 w-12 text-primary animate-bounce mb-4 text-cyan-400" />
-              <div className="text-[14px] font-black uppercase tracking-[0.4em] text-white animate-pulse">
-                {transitionTarget}
+            <div className="flex flex-col items-center">
+              <Terminal className="h-12 w-12 text-primary animate-pulse mb-6 text-primary" />
+              <div className="text-[12px] font-black uppercase tracking-[1em] text-white animate-pulse">
+                Synchronizing_Nodes...
               </div>
-              <div className="mt-2 text-[10px] font-mono text-neutral-400 tracking-widest">
-                SYNCHRONIZING TELEMETRY · RECONFIGURING SYSTEM NODES
+              <div className="mt-3 text-[9px] font-mono tracking-widest text-white/40">
+                {mode === "personal"
+                  ? "INITIALIZING AEROSPACE COCKPIT // PROTOCOL 02"
+                  : "INITIALIZING TACTICAL ARENA // PROTOCOL 01"}
               </div>
             </div>
 
-            <div className="absolute inset-0 scanline-hud opacity-30 pointer-events-none" />
+            <div className="absolute inset-0 scanline-hud opacity-40 pointer-events-none" />
           </motion.div>
         )}
       </AnimatePresence>
